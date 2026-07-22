@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- //form - is a structure , its main purpose is to collet data/user input. -->
+    <!-- tags used in form -->
+
+     <!-- <form></form>  : to crate html form for user inpurt.-->
+
+    <!--  <input type="text">  :it is used for creating diffrent kind of input elements. -->
+       <!-- it can be used in many forms and it can be used for multiple purpose. -->
+     <!--                     for radioButton, checkboxes, datepicker(calender),submit btn
+         <input type=" " id="" , name=" " , >
+          type :  which type of input we have to give.
+           id  : give a unique id .
+           name : give a name to the input field.              
+         
+          placeholder- we can add a placeholder inp tag.
+
+           <input type="submit" when we give a type='submit'  means our data is submit kuthetri. it is a lister to 
+           submit our data at specified possition/server.
+           purn form cha submit btn create houn jato.
+            value=" " btn wrti yenar text ex= click , submit, show , etc
+           we can also use action=" "
+
+           
+     -->
+
+     <!-- <label for=""></label> 
+             for=" "  it is a attribute link a lable to input field.
+                 for creating lable,it is used for creating screen reader , 
+                 note:=> lable's attribute for=" " and inputs id have a same using this for mappig/link a lable to the input.
+                -->
+
+                <form>
+                <label for="username">Enter Name : </label>
+               <input type="text"  id="username" placeholder="enter your name here" >
+               <br>
+               <br>
+               <label for="password">Enter password : </label>
+               <input type="text"  id="password" placeholder="enter your password here">
+                <br>
+                <br>    
+                <input type="submit" value="submit">
+                </form>
+
+
+<!-- form element:- 
+         form element means the tags which will be used for creating a form.
+         1.input
+         2.lable
+         3.select- for creating drop down list.
+         4.option - for creating multiple options
+         5.button 
+         6.textArea - used for taking multiline inputs.
+         7.fieldset - for grouping multiple eleemnts together
+         8.legend- for giving a caption on fieldset.
+
+                
+                -->
+         <div>
+            <label for="datepicker">Choose date: </label>
+            <input type="date" id="datepicker" >
+           <br>
+           <br>
+            <label for="list">choose your dish</label>
+            <select name="list" id="list" multiple >
+                <option value="maggie">maggie</option>
+                <option value="chips">chips</option>
+                <option value="snacks">snacks</option>
+                <option value="grocery">grocery</option>
+
+            </select>
+            <br>
+            <br>
+            <button>click me (:-)</button>
+     
+            <br>
+            <br>
+            <textarea name="textarea" id="textArea" cols="30" rows="13" placeholder="enter the text here."></textarea>
+    
+
+         </div>
+
+         <fieldset>
+    
+             <legend>HTML DUMMY FORM</legend>
+          <form>
+                <label for="username">Enter Name : </label>
+               <input type="text"  id="username" placeholder="enter your name here" >
+               <br>
+               <br>
+               <label for="password">Enter password : </label>
+               <input type="text"  id="password" placeholder="enter your password here">
+                <br>
+                <br>    
+                <input type="submit" value="submit">
+                </form>
+         </fieldset>
+</body>
+</html>

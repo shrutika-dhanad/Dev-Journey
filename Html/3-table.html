@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+  <h1>TABLE </h1>
+     <!-- table : table is a structure we can arrange our data in th form of rows and columns. -->
+         <!--
+        1 . table - fo creating table 
+        2.thead - for heading
+        3.tbody - actual content of table.
+        4.tfoot - summerization
+        5. tr - for row
+        6. td - for cell,  table data
+        7. th - for heading
+         
+        rowspan- extending row . rowspan="3" 3 rows prynt extend hoil.
+        colspan - extending column  colspan="2" 2 column prynt extend hoil
+        
+         -->
+
+       <table border="5">
+
+          <thead>
+            <th>student id </th>
+            <th>student name</th>
+            <th>gender</th>
+            <th>age</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1234</td>
+              <td>shrutika</td>
+              <td>female</td>
+              <td rowspan="4">21</td>
+            </tr>
+            <tr>
+                <td colspan="3">1234</td>
+               
+            </tr>
+            <tr>
+                
+              <td colspan="3">female</td>
+            </tr>
+            <tr>
+              <td>1234</td>
+              <td>gita</td>
+              <td>female</td>
+            
+            </tr>
+  
+
+         </tbody>
+
+
+      </table>
+
+      <h1>TABLE 2 </h1>
+
+       <table border="3">
+         
+        <tbody>
+         <tr>
+            <td>column 1</td>
+            <td>column 2</td>
+            <td>column 3</td>
+
+         </tr>
+
+        <tr>
+              <td rowspan="2">row 1 cell 1</td>
+              <td>row 1 cell 2</td>
+              <td>row 1 cell 3</td>
+
+        </tr>
+
+        <tr>
+            <td>row 2 cell 2</td>
+            <td>row 2 cell 3</td>
+
+        </tr>
+
+        <tr>
+             <td colspan="3"> row 3 cell 1</td>
+
+        </tr>
+     </tbody>
+
+
+
+      </table>
+
+
+      <h1>table 3</h1>
+
+
+      <table border="2">
+       
+        <thead>
+         <th>NO</th>
+         <th>Full Name </th>
+         <th>Possition</th>
+         <th>Salary</th>
+         <th>Type</th>
+        </thead>
+          
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>bill gates</td>
+            <td>founder msoft</td>
+            <td>$11000</td>
+            <td rowspan="4">company founder</td>
+        </tr>
+        <tr>
+             <td>1</td>
+            <td>bill gates</td>
+            <td>founder msoft</td>
+            <td>$11000</td>
+        </tr>
+        <tr>
+             <td>1</td>
+            <td>bill gates</td>
+            <td>founder msoft</td>
+            <td>$11000</td>
+        </tr>
+        <tr>
+             <td>1</td>
+            <td>bill gates</td>
+            <td>founder msoft</td>
+            <td>$11000</td>
+        </tr>
+        <tfoot>
+            <tr>
+                <td colspan="3">total expenses : </td>
+                <td>$46000</td>
+            </tr>
+        </tfoot>
+
+        </tbody>
+
+      </table>
+
+
+      <h1>table 4</h1>
+
+      <table border="4">
+         
+        <thead>
+            <th>country</th>
+            <th>state</th>
+            <th>city</th>
+            <th>street</th>
+            <th>male</th>
+            <th>female</th>
+            <th>others</th>
+        </thead>
+
+        <tbody style="border: 2px solid black;">
+             <tr>
+                <td rowspan="8">1</td>
+                <td rowspan="4">kerala</td>
+                <td rowspan="2">cochin</td>
+                <td>new street</td>
+                <td>500</td>
+                <td>600</td>
+                <td>6</td>
+             </tr>
+             <tr>
+                <td>main street </td>
+                <td>300</td>
+                <td>288</td>
+                <td>2</td>
+             </tr>
+             <tr>
+                <td rowspan="2">Trivndam</td>
+                <td>guru street</td>
+                <td>500</td>
+                <td>600</td>
+                <td>10</td>
+             </tr>
+             <tr>
+                <td>tvk street</td>
+                <td>500</td>
+                <td>600</td>
+                <td>2</td>
+             </tr>
+             <tr>
+                <td rowspan="4">maaharashtra</td>
+                 <td rowspan="2">Mumbai</td>
+                 <td>kreeshna street</td>
+                 <td>700</td>
+                 <td>850</td>
+                 <td>1</td>
+             </tr>
+             <tr>
+                <td>main street</td>
+                 <td>500</td>
+                 <td>600</td>
+                 <td>2</td>
+             </tr>
+             <tr>
+                <td rowspan="2">surath</td>
+                 <td>new street</td>
+                 <td>500</td>
+                 <td>600</td>
+                 <td>4</td>
+             </tr>
+             <tr>
+                 <td>bella street</td>
+                 <td>500</td>
+                 <td>600</td>
+                 <td>2</td>
+             </tr>
+             <tr>
+                <td rowspan="2">2</td>
+                <td rowspan="2">Alaska</td>
+                <td rowspan="2">AKA central</td>
+                <td>new street</td>
+                <td>200</td>
+                <td>210</td>
+                <td>2</td>
+
+             </tr>
+             <tr>
+                <td>cross street</td>
+                <td>200</td>
+                <td>210</td>
+                <td>2</td>
+             </tr>
+             <tr></tr>
+
+        </tbody>
+
+      </table>
+
+
+
+</body>
+</html>
