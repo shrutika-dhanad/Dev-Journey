@@ -5,12 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     
-    <link rel="stylesheet" href="1-basic.css">
+
+    <!-- internal css -->
+    <style>   
+        p{
+            color: aquamarine;
+        }
+
+        div p{
+            color: grey;
+            background-color: yellow;
+        }
+
+        h1 + p{
+           color: green;
+        }
+
+
+        div > p{
+            background-color:red;
+        }
+    </style>
+    
+     <!-- <link rel="stylesheet" href="1-basic.css">external css -->
+
+
 </head>
 <body>
-    <h1>helloo pritesh </h1>
+
+ <!-- when we can add  a same property in inline css  and internal css aways inline css will win  but 
+  we want a internal css win we can add a "!imporatnt" in internal css 
+    OR 
+    when we can add a same property in 3 types of css also the inline css is win
+  -->
+
+
+     <!-- <h1 style="background-color: #fff;">helloo pritesh </h1> inline css -->
+
+     <h1>shrutika lives in pcmc</h1>
+
    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, tempora? Enim eaque sed nihil cum, modi laudantium sit non error.</p>
 
    <h1>shrutika bhagwan dhanad is a sister of pritesh dhanad</h1>
+
+   <!-- selectors
+                 : selectors is a way we can target any html element and we can aply our styling 
+     -->
+
+
+     <h2>shrutika bhagwan dhanad</h2>
+     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, ex!</p>
+     <section>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+     </section>
+
+     <div>
+        <h1>shrutika wants to became an enginner</h1>
+        <p>Lorem ipsum dolor sit amet.</p>
+
+     </div>
+
+
+     <div>
+        <ul>
+        <li>
+             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, laborum?</p>
+         <div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste minima iusto sit aut officia! Repellat earum cupiditate excepturi provident exercitationem.</p>
+         </div>
+   
+            </li>
+       </ul>
+        </div>
 </body>
 </html>
