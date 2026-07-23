@@ -5,7 +5,13 @@
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Document</title>
     <style>
-     span{
+
+      /* *{   it is a universal selector when we can aply any property in universal selector it can be apply for whole page
+        margin: 0;
+        padding: 0;
+      } */  
+       
+      span{
         /* color:blue;
         border: 5px solid black;
         height: 200px;
@@ -35,8 +41,9 @@
         /* border-radius:5rem; */
         border: 2px solid pink;
      border-radius: 5px;
-        
-        width: 300px;
+        margin: 20px;
+        padding: 50px;
+                  width: 300px;
 
      }
 
@@ -50,6 +57,51 @@
 
      }
 
+
+
+     #p1{
+      border: 2px solid black;
+      height: 300px;
+      width: 400px;
+      background-color:aquamarine;
+      padding: 20px ;
+      /* margin: 5rem; */
+      margin-top: 500px;
+     }
+ 
+     #p2{
+      border: 2px solid black;
+      height:300px;
+      width: 400px;
+      background-color:rgb(206, 213, 0);
+      padding-left: 20px ;
+      padding-bottom: 9px;
+      padding-top: 15px;
+      margin: 5rem;
+
+     }
+    
+     #p3{
+      border: 2px solid black;
+      height: 200px;
+      width: 500px;
+      background-color:rgb(255, 127, 159);
+      /* padding: 20px 15px 2px 15px ; */
+
+      padding: 20px 40px;
+     }
+
+
+     #ftrPara{
+      height: 300px;
+      width: 400px;
+      border: 3px dashed green;
+      background-color: grey;
+      color: rgb(1, 8, 148);
+      padding: 5px;
+      margin: 4px;
+      box-sizing:border-box;
+     }
 
     </style>
 </head>
@@ -66,6 +118,50 @@
 <span>hello
     shruitka dhanand
 </span>
-<h2>shrutika <span>Pappa</span> bhagwan dhanad</h2>
+<h2>shrutika <span>Pappa</span> bhagwan dhanad</h2>   <!--The <span> tag is an inline HTML element
+   used to group a small portion of text or other inline elements so that you c
+  can apply CSS styles or JavaScript to that specific part.
+
+The <span> tag does not create a new line and has no visual effect by itself.-->
+
+
+
+
+<!-- BOX MODEL 
+     The CSS Box Model is a layout model that describes how the browser calculates the size and
+      spacing of every HTML element.
+
+Every HTML element consists of 4 parts:
+
+Content- the actual data inside an html element.
+Padding - the space between the contedn and the border
+Border -  A border is a line surrounding the content and padding.
+Margin - Margin is the space outside the border.It separates one element from another.
+    -->
+
+
+<section>
+    <h1>Box model  </h1>
+      <p id="p1">Lorem ipsum dolor sit, amet consectetur adipisicingt facilis adipisci doloribus 
+
+      </br> eius explicabo porro haru  Lorem ipsum dolor sit amet consectetur adipisicing elit
+      . Iste ipsa, quas vel modi quisquam optio commodi ex maiores asperiores reiciendis l
+      ibero pariatur quasi, culpa repellendus unde expedita, ab cum vero quia harum inventore
+      </br> quae accusamus. Nam, molestias cum? Cumque, iure! Ea quo alias expedita dolor aperiam
+       cupiditate rerum dignissimos accusantium? </p>
+
+
+      <p id="p2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam voluptatem aperiam eum asperiores voluptas dolore nemo architecto minima officiis,</br> ea dolorem ut eligendi delectus magnam animi suscipit aut officia impedit.</p>
+      <p id="p3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, ipsa, culpa nobis suscipit unde natus pariatur cupiditate animi dignissimos veritatis deserunt laboriosam ea a asperiores odit architecto esse omnis explicabo numquam. Eius autem similique magni obcaecati dolores aperiam consequatur dicta. Quisquam harum sunt architecto quas doloremque omnis facilis fugiat vitae ullam qui laboriosam cum, sequi voluptatum dolorum ipsum exercitationem!  </br>Suscipit asperiores, ut deleniti accusamus similique ad quo necessitatibus. Tempore, ratione?</p>
+
+
+
+    </section>
+
+
+    <footer>
+    <p id="ftrPara">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, possimus. Sed consectetur atque sequi? Nemo, voluptate. Exercitationem deserunt quas corrupti assumenda, aspernatur incidunt nam. Harum soluta, nesciunt minima ea eveniet inventore et deserunt alias veritatis quasi provident placeat dolorum animi voluptates voluptas assumenda cupiditate sequi amet corporis explicabo magnam excepturi. Animi illo qui labore iste ipsam a, reiciendis sunt, aliquam sint architecto eaque, dolor molestiae tempora? Atque corrupti accusamus nihil est corporis sit porro quisquam. Animi velit quasi saepe nobis dignissimos natus vitae possimus repellat, odio accusamus. Delectus incidunt labore architecto iusto. Excepturi tempore praesentium, ea totam omnis necessitatibus voluptate.</p>
+
+    </footer>
 </body>
 </html>
