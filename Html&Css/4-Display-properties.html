@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+
+    /* border: 5px solid black;
+    height: 90px;
+    width: 200px;
+    margin: 10px;
+    padding: 8px; */
+    /* display: block;  for adding a styling on inline lements used a diplay blokc property beacause of conversion it is possible. */
+
+
+
+
+    span{
+        height: 100px;
+        width: 300px;
+        border: 2px solid black;
+        margin:13px;
+        padding: 10px;
+        display: inline-block;
+
+    }
+
+    </style>
+</head>
+<body>
+
+
+
+    <!-- Display :=> 
+          display property specifies how an HTML element is displayed and how it participates
+      in the layout of the webpage.
+      
+       1.dsplay:block =>
+               ✅ Starts on a new line
+
+               ✅ Takes full available width
+
+               ✅ width works
+
+               ✅ height works
+
+               ✅ Margin and padding work
+        
+               A block element takes the full available width of its parent and always starts on a new line.
+
+            Examples of Block Elements
+            <div>
+             <h1> to <h6>
+              <p>
+            <section>
+           <article>
+
+
+            2. display: inline =>
+
+An inline element only takes as much width as its content needs and does not start on a new line.
+
+Examples of Inline Elements
+<span>
+<a>
+<strong>
+<em>
+<label>
+      ✅ Same line
+
+❌ Width does not work
+
+❌ Height does not work
+
+✅ Padding works
+
+✅ Horizontal margin works
+
+block=>  new linw, width +              , w/H yes , m/p yes            
+inline => same line,width -content widht, W/H no , m/p only horizontal no vertical
+*****************************************************************************************************
+*****************************************************************************************************
+3. display: inline-block
+Definition
+it can behave like inline but we can set our cusome properties like h/w m/p
+
+inline-block combines the features of inline and block.
+
+The element:
+
+Stays on the same line.
+Accepts width and height.
+
+✅ Width works
+
+✅ Height works
+
+✅ Same line
+
+span{
+display:inline-block;
+
+width:200px;
+
+height:100px;
+
+background:yellow;
+}
+
+4. display: none
+Definition
+
+display:none completely removes an element from the webpage layout.
+
+The browser behaves as if the element does not exist.
+
+Example
+<p>Hello</p>
+
+<p class="hide">Welcome</p>
+
+<p>HTML</p>
+.hide{
+display:none;
+}
+
+Output:
+
+Hello
+
+HTML
+
+The "Welcome" paragraph disappears and does not occupy any space.
+
+
+
+5. display: flex
+Definition
+
+Flexbox is used to arrange items in a row or column.
+
+Example
+<div class="container">
+
+<div>1</div>
+
+<div>2</div>
+
+<div>3</div>
+
+</div>
+.container{
+
+display:flex;
+
+}
+
+Output:
+
+1   2   3
+
+Instead of appearing one below another.
+
+Benefits
+Easy alignment
+Responsive layouts
+Equal spacing
+Horizontal and vertical centering
+
+      -->
+
+<span>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, quidem?</p>
+</span>
+    
+ <span>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, quidem? fejk feuisf ihsekf iwhfk </p>
+</span>
+
+
+<span>
+    hellos shrutika bhagwan dhanand Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, tempore!
+</span>
+
+</body>
+</html>
