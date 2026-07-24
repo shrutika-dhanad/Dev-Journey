@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ <style>
+
+/* <!-- 1. % unit - it can depend on its immidite parent  --> */
+.parent{
+    background-color: yellow;
+    border: 2px solid black;
+    /* font-size: larger; */
+    width: 70%;
+
+}
+
+.child{
+    background-color:greenyellow;
+    border: 1px solid red;
+    width:50%;
+    height: 200px;
+}
+
+.container{
+    height:100vh;  /*viewport height and width */
+    width: 70vw;
+    background-color:grey;
+    border:5px solid pink;
+}
+
+body{
+    background-color: pink;
+}
+ 
+
+.par{
+    font-size: 10px;
+}
+.chi{
+    font-size: 10em;
+}
+
+.REMdev{
+    /*bydefault root element font size is 16px so */
+    font-size: 5rem;  /*it can became a 16px*5= 80px*/
+
+
+}
+ </style>
+
+
+
+</head>
+<body>
+    <!-- <div class="parent">
+         <div class="child">
+               shrutika Bhagwan dhanad
+         </div>
+
+    </div> -->
+
+
+
+
+    <div class="container">
+ 
+        <h1>Welcome To My Coding World !</h1>
+
+    </div>
+
+
+
+ 
+    <div class="par">   
+
+        <!-- em -> it can relative to its parent 
+           if parent font size is 10px asel and chil chi font size 10em kel tr 
+                                 - 10em*10px=> 100px 
+          -->
+            welcome to codeHelp
+
+        <div class="chi">
+   
+            welcome to codeHelp
+
+        </div>
+          
+    </div>
+
+
+    <div class="REMdev">
+         Shrutttttikaaaa Dhhhhhhhhhhhhannnnnnnnnaaaaddddddddddd
+        </div>
+</body>
+</html>

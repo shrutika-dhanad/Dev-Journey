@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    .img{
+       margin: 10;
+       border: 2px solid black;
+       position: relative;   
+       height:7000px;
+       background-color: aqua;
+    }
+    
+
+  .img1{
+       /*position:relative;   gap maintained rahto */
+      /* top: 200px;
+      left: 100px; */
+           
+    }
+
+    /* .img3 { */
+   /* position: absolute;   /* gap maintained nahi rahat ,overlapping hote. */
+    /* top: 100px; */
+    
+    /* }  */
+
+    .img4{
+     position: fixed;
+     top: 100px ;
+    }
+ 
+.img2{
+    position:sticky;
+    top: 50px;
+
+}
+
+.box{
+    height: 700px;
+    background-color: yellow;
+}
+    
+/* sticky - sticky can show  sticky behaviour only inside  its parent contaienr not the ouside of parent*/
+/* fixed - fixed can perform fixed behaviour on whole page also outside of parent container. */
+
+
+</style>
+
+
+</head>
+<body>
+     <div class="img">
+
+ <img src="PriteshProfile.jpg" alt="pic 1" height="200px" width="300px" class="img1" >
+ <img src="PriteshProfile.jpg" alt="pic 2" height="200px" width="300px"  class="img2">
+ <img src="PriteshProfile.jpg" alt="pic 3" height="200px" width="300px" class="img3">
+ <img src="PriteshProfile.jpg" alt="pic 4" height="200px" width="300px" class="img4">
+
+ </div>
+
+ <div class="box">
+ <h1>
+    !..................BOX Container.......!
+ </h1>
+ </div>
+</body>
+</html>
