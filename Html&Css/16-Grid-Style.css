@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+    height: 100%;
+    width: 100%;
+}
+
+.Container{
+    height: 100%;
+    width: 100%;
+    background-color: grey;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4 , 1fr);
+    gap: 0.5rem;
+    padding: 4rem;
+    border: 20px solid rgb(23, 4, 83);
+
+    justify-items:stretch;
+
+}
+.item{
+    /* height: 100px;
+    width:100px; */
+    background-color: pink;
+    color: rgb(10, 5, 72);
+    border: 5px solid yellow;
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    /* justify-self: end; */
+    /* justify-self: stretch; */
+
+    /* justify self i applies on items when we can  applt justify-self: start;  
+    it can placed on cells start 
+    
+    
+    it can aply in horizontal line*/
+
+
+    /* align-self:stretch; it can apply vertically */
+
+ 
+    /* place-self: it can applies on both vertiucally and horizontally. */
+    /* place-self: center; */
+
+
+}
