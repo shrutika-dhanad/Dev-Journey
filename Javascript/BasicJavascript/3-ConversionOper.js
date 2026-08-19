@@ -13,17 +13,17 @@ let booleanIsLogIn = Boolean(isLoggedIn);
 console.log(booleanIsLogIn);
 
 let loggedIn = ""; //false
-let loggedInString ="shruu"  //true
+let loggedInString = "shruu"; //true
 
 let logged = Boolean(loggedIn);
 console.log(logged);
 
 let logged1 = Boolean(loggedInString);
-console.log(logged1)
-
-
+console.log(logged1);
 
 let checkString = 33;
-let isString = String(checkString)
-console.log(isString)
-console.log(typeof isString)
+let isString = String(checkString);
+console.log(isString);
+console.log(typeof isString);
+
+console.log(typeof isLoggedIn);
