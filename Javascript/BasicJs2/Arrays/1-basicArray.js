@@ -54,7 +54,7 @@ const one = [10,20,50,30,5,66,554];
 const two = one.join()
 
 console.log(one)
-console.log(two)
+console.log("using join" + two)
 console.log(typeof two)
 
 //8.slice- Returns a copy of a section of an array. For both start and end, 
