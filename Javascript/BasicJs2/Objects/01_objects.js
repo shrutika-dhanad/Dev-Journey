@@ -33,4 +33,66 @@ const secondObj = {
   isLoggedIn: false,
   [mySym]: "dhanadshrutika",
 };
-console.log(secondObj[mySym]);
+// console.log(secondObj[mySym]);
+
+const mySymbols = Symbol("|shrutika|");
+
+let myNewObject = {
+  [mySymbols]: "1st symbol !",
+  name: "shrutika Dhanand",
+  "full Name": "shrutika Bhagwan Dhanad",
+  age: 22,
+  isLoggedIn: true,
+};
+
+// console.log(myNewObject[mySymbols]);
+console.log(typeof myNewObject[mySymbols]);
+console.log(myNewObject["name"]);
+console.log(myNewObject["full Name"]);
+console.log(typeof mySymbols);
+
+//freeze():-Object on which to lock the attributes.
+// freeze can lock the attribute | after freeze() we didn't chnage the value
+
+myNewObject.name = "shru Dhanad";
+Object.freeze(myNewObject);
+myNewObject.name = "pritesh dhanad";
+console.log(myNewObject);
+
+const Prituu = Symbol("helllo prituu");
+let user = {
+  name: "pritesh",
+  age: 25,
+  occupation: "software developer",
+  family: "mother, father and sister",
+  location: "kopargaon",
+  salary: 50000,
+  [Prituu]: " hey guddu!",
+};
+
+console.log(user);
+console.log("symbol of pritesh : - " + user[Prituu]);
+
+user.salary = 100000;
+// Object.freeze(user);
+user.salary = 80000;
+console.log(user);
+
+console.log(
+  "******************************************************************************************************",
+);
+
+
+const JsUser={
+ state:"maharashtra",
+ pin_code:123654,
+ country:"india",
+ ["name"]:"shrutika",
+ salary:5000
+};
+
+JsUser.greets=function(){
+  console.log(`hellyy  i am from ${this.state} and salary is ${this.salary}`)
+  // same object la reference karnyasathi this cha use krto.
+}
+console.log(JsUser.greets())
