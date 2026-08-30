@@ -1,5 +1,5 @@
 //singleton : menas there is only one instacnce in throughtout the application,
-//means 11 ch objcet referece saglikde use kela jail , multiple parts of the application
+//means 1 ch objcet referece saglikde use kela jail , multiple parts of the application
 // referrence to  the same object,ex: Object.create
 
 //important ;
