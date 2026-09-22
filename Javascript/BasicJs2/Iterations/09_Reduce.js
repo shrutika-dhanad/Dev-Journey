@@ -5,7 +5,7 @@ let myArray = [10,5,9,6,62,12,54];
 
 let shopping =[
     {
-      itemName:"js course",
+      itemName:"js coursess",
       itemPrice:1999
     },
     {
@@ -24,3 +24,11 @@ let shopping =[
 
 let myBill = shopping.reduce((acc,item)=> acc + item.itemPrice, 0)
 console.log(myBill)
+
+
+
+
+
+const arr=[10,20,30,4];
+let red=arr.reduce((acc,item)=> acc*item,1)
+console.log(red)
