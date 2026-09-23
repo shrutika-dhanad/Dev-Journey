@@ -31,4 +31,4 @@ if (Object.keys(emptyObj).length === 0) {
 
 let val1 = 10;
 val1 = 10 ?? 52 ?? 523;
-console.log(val1)
+console.log(val1)f
