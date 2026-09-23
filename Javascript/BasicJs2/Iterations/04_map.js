@@ -97,3 +97,5 @@ for (const key in map) {
   console.log([key]); //same
   console.log(map1[key]);   //same 
 }
+
+
