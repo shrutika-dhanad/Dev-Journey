@@ -1,4 +1,4 @@
-string in javascript expalin in detail for interview prep
+string in javascript expalin in detail for interview prep.
 
 Absolutely. Let’s learn Strings in JavaScript in an interview-preparation style, from basics to important interview concepts, with examples.
 
@@ -96,6 +96,7 @@ console.log(typeof b); // object
 Generally, avoid new String(). Prefer primitive strings:
 
 let str = "Hello";
+
 6. String Length
 
 The .length property returns the number of UTF-16 code units in a string.
@@ -160,7 +161,7 @@ console.log(str.charAt(0));
 Output:
 
 H
-8. charAt() vs Bracket Notation
+8. charAt() vs Bracket Notation2
 Bracket notation
 let str = "Hello";
 
