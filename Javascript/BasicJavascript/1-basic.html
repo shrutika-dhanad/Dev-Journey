@@ -65,6 +65,7 @@ obj = {};          // ❌ Error — can't reassign the binding
 
 const arr = [1, 2, 3];
 arr.push(4); // ✅ Allowed
+
 2. Temporal Dead Zone (TDZ) — Common Interview Trap
 
 ..............
@@ -143,7 +144,7 @@ js
 typeof undefined     // "undefined"
 typeof null          // "object" (famous historical JS bug)
 typeof 42             // "number"
-typeof "hi"            // "string"
+typeof "hi"            // "string" 
 typeof true            // "boolean"
 typeof Symbol()         // "symbol"
 typeof 10n               // "bigint"
@@ -268,6 +269,568 @@ Callback hell in poorly structured async code (solved with Promises/async-await)
 6. Bonus — TypeScript Mention
 
 Interviewers often like candidates to mention TypeScript (a superset of JS with static typing) as a modern industry trend addressing JS's dynamic-typing weaknesses in large codebases — shows awareness of the ecosystem's evolution.
+
+<!-- 
+# JavaScript Interview Preparation Guide
+## var, let, const | Primitive & Non-Primitive Types | TDZ | Data Types | JS Introduction & ECMAScript
+
+---
+
+# 1. JavaScript Introduction & Features
+
+### Q1. What is JavaScript?
+JavaScript is a high-level, interpreted (JIT-compiled), single-threaded, dynamically-typed, prototype-based programming language mainly used to make web pages interactive. It follows the ECMAScript specification.
+
+### Q2. What are the key features of JavaScript?
+- **Interpreted / JIT compiled** – runs via an engine (V8, SpiderMonkey, etc.) without a separate compile step visible to the developer.
+- **Dynamically typed** – variable types are determined at runtime, not declared.
+- **Single-threaded** – executes one operation at a time on the main thread, but handles async work via the **event loop**.
+- **Prototype-based OOP** – objects inherit directly from other objects via prototypes (not classical classes, though `class` syntax is sugar over this).
+- **First-class functions** – functions can be assigned to variables, passed as arguments, returned from other functions.
+- **Multi-paradigm** – supports procedural, object-oriented, and functional programming styles.
+- **Weakly typed** – allows implicit type coercion (`"5" + 5 === "55"`).
+- **Runs everywhere** – browsers, servers (Node.js), mobile (React Native), IoT.
+
+### Q3. What is the difference between JavaScript and ECMAScript?
+ECMAScript (ES) is the **specification/standard** (governed by TC39 committee) that defines how a scripting language should behave. JavaScript is the most popular **implementation** of that standard. Other implementations include JScript and ActionScript.
+
+### Q4. What are the major ECMAScript versions and their key features?
+| Version | Year | Key Features |
+|---|---|---|
+| ES1–ES3 | 1997–1999 | Basic language features, regex, try/catch |
+| ES5 | 2009 | `"use strict"`, JSON support, `Array.forEach/map/filter/reduce`, getters/setters, `Object.create` |
+| ES6 / ES2015 | 2015 | `let`/`const`, arrow functions, classes, template literals, destructuring, default/rest/spread params, promises, modules (`import`/`export`), `Map`/`Set`, generators |
+| ES2016 (ES7) | 2016 | `Array.prototype.includes`, exponentiation operator `**` |
+| ES2017 (ES8) | 2017 | `async`/`await`, `Object.values`/`Object.entries`, string padding |
+| ES2018 (ES9) | 2018 | Rest/spread for objects, async iteration, `Promise.finally` |
+| ES2019 (ES10) | 2019 | `Array.flat`/`flatMap`, `Object.fromEntries`, optional `catch` binding |
+| ES2020 (ES11) | 2020 | Optional chaining `?.`, nullish coalescing `??`, `BigInt`, `Promise.allSettled`, dynamic `import()` |
+| ES2021 (ES12) | 2021 | `replaceAll`, logical assignment operators (`&&=`, `||=`, `??=`), `Promise.any` |
+| ES2022 (ES13) | 2022 | Top-level `await`, class fields (private `#field`), `Array.at()`, `Object.hasOwn` |
+| ES2023+ | 2023+ | `Array.toSorted/toReversed`, `findLast`, `Array.with()` |
+
+### Q5. What is the difference between JavaScript and Java?
+Only similar in name. Java is statically typed, class-based, and compiled to bytecode running on the JVM. JavaScript is dynamically typed, prototype-based, and interpreted/JIT-compiled, primarily for web scripting.
+
+### Q6. Is JavaScript single-threaded? How does it handle async operations?
+Yes, JS has a single call stack (single-threaded execution). Asynchronous behavior (timers, network calls, I/O) is delegated to **Web APIs** (in browsers) or **libuv** (in Node.js). Once complete, callbacks are queued in the **callback queue / microtask queue**, and the **event loop** pushes them back onto the call stack when it's empty.
+
+### Q7. What is the difference between client-side and server-side JavaScript?
+Client-side JS runs in the browser (DOM manipulation, browser APIs). Server-side JS (Node.js) runs on a server, with access to the file system, databases, and OS-level modules, but no DOM/window object.
+
+### Q8. What are JS engines? Name a few.
+A JS engine parses and executes JavaScript code. Examples:
+- **V8** – Chrome, Node.js, Edge
+- **SpiderMonkey** – Firefox
+- **JavaScriptCore (Nitro)** – Safari
+- **Chakra** – old Edge
+
+---
+
+# 2. var, let, and const
+
+### Q9. What are the differences between `var`, `let`, and `const`?
+
+| Feature | `var` | `let` | `const` |
+|---|---|---|---|
+| Scope | Function-scoped | Block-scoped | Block-scoped |
+| Redeclaration | Allowed | Not allowed (same scope) | Not allowed |
+| Reassignment | Allowed | Allowed | **Not allowed** |
+| Hoisting | Hoisted & initialized as `undefined` | Hoisted but **not initialized** (TDZ) | Hoisted but **not initialized** (TDZ) |
+| Attached to `window`/global object | Yes | No | No |
+| Must be initialized at declaration | No | No | **Yes** |
+
+### Q10. Why was `let`/`const` introduced when `var` already existed?
+`var`'s function scoping caused bugs — variables leaked out of blocks (`if`, `for`, etc.), could be silently redeclared, and hoisting behavior confused developers, especially in loops with closures (see Q17). `let`/`const` fix this with **block scoping** and stricter rules, making code safer and more predictable.
+
+### Q11. Can you reassign a `const` variable?
+No, the *binding* cannot be reassigned. But if the const holds an **object or array**, its internal properties/elements **can still be mutated**, because `const` only makes the reference immutable, not the value.
+
+```js
+const person = { name: "Alice" };
+person.name = "Bob"; // ✅ Allowed — mutating the object
+person = {};          // ❌ TypeError: Assignment to constant variable.
+```
+
+### Q12. What happens if you declare `var x` twice in the same scope?
+No error — it's simply treated as one variable and the second declaration is ignored (value updates if assigned).
+
+```js
+var x = 10;
+var x = 20;
+console.log(x); // 20
+```
+Doing the same with `let`/`const` throws `SyntaxError: Identifier 'x' has already been declared`.
+
+### Q13. Is `var` function-scoped or block-scoped? Explain with example.
+`var` is **function-scoped** — it ignores block boundaries (`{}`, `if`, `for`, etc.) and is only contained by the nearest enclosing function (or the global scope).
+
+```js
+function test() {
+  if (true) {
+    var a = 10;
+  }
+  console.log(a); // 10 — accessible outside the if-block
+}
+```
+
+### Q14. Show block scoping of `let`.
+```js
+function test() {
+  if (true) {
+    let b = 10;
+  }
+  console.log(b); // ❌ ReferenceError: b is not defined
+}
+```
+
+### Q15. What is variable shadowing? Is illegal shadowing possible?
+Shadowing = declaring a variable with the same name in an inner scope. 
+- `let`/`const` can shadow `var` and vice versa in nested blocks — that's legal.
+- **Illegal shadowing**: you cannot shadow a `let` variable with a `var` in the same/inner scope crossing function boundary rules improperly.
+
+```js
+let a = 10;
+{
+  var a = 20; // ❌ SyntaxError: Identifier 'a' has already been declared
+}
+```
+```js
+let a = 10;
+{
+  let a = 20; // ✅ Legal shadowing — new block-scoped variable
+  console.log(a); // 20
+}
+console.log(a); // 10
+```
+
+### Q16. Are variables declared with `var` attached to the global object?
+Yes. In browsers, `var x = 1` at the top level creates `window.x`. `let`/`const` do **not** attach to `window`.
+
+```js
+var x = 10;
+let y = 20;
+console.log(window.x); // 10
+console.log(window.y); // undefined
+```
+
+### Q17. Classic interview trap: `var` in a loop with `setTimeout`.
+```js
+for (var i = 1; i <= 3; i++) {
+  setTimeout(() => console.log(i), 1000);
+}
+// Output after 1 sec: 4, 4, 4
+```
+**Why?** `var` is function/global scoped, so there's only **one** `i` shared across all iterations. By the time the callbacks run (after the loop finishes), `i` is `4`.
+
+```js
+for (let i = 1; i <= 3; i++) {
+  setTimeout(() => console.log(i), 1000);
+}
+// Output: 1, 2, 3
+```
+**Why?** `let` creates a **new binding of `i` for every iteration** (block-scoped per loop cycle), so each closure captures its own `i`.
+
+### Q18. When should you use `var`, `let`, and `const`?
+- Avoid `var` in modern code.
+- Use `const` by default (signals intent — value won't be reassigned).
+- Use `let` only when you know the variable will be reassigned (loop counters, accumulators, etc.).
+
+---
+
+# 3. Hoisting & Temporal Dead Zone (TDZ)
+
+### Q19. What is hoisting in JavaScript?
+Hoisting is JS engine's behavior of moving **declarations** (not initializations) to the top of their scope during the **compilation/memory creation phase**, before code execution begins.
+
+### Q20. How does hoisting differ for `var`, `let`, `const`, and function declarations?
+- `var` → hoisted and **initialized with `undefined`**.
+- `let`/`const` → hoisted but **not initialized** — stay in the **Temporal Dead Zone** until their declaration line executes.
+- **Function declarations** → hoisted completely (name + body), so they can be called before their definition.
+- **Function expressions / arrow functions** assigned to `var`/`let`/`const` → only the variable is hoisted, not the function body.
+
+### Q21. What is the Temporal Dead Zone (TDZ)?
+TDZ is the time span between entering a scope (where a `let`/`const` variable is hoisted) and the actual line where it's declared/initialized. Accessing the variable during this window throws a `ReferenceError`, even though the variable technically already exists in memory.
+
+```js
+console.log(a); // ReferenceError: Cannot access 'a' before initialization
+let a = 5;
+```
+
+### Q22. Why does TDZ exist? What problem does it solve?
+It catches bugs early by preventing use of variables before they're meaningfully declared, instead of silently returning `undefined` (as `var` does). This enforces safer, more predictable code and helps avoid logic errors from using variables prematurely.
+
+### Q23. Compare `var` vs `let` for hoisting with a code example.
+```js
+console.log(x); // undefined (not an error)
+var x = 5;
+
+console.log(y); // ReferenceError (TDZ)
+let y = 5;
+```
+
+### Q24. Is `const` also affected by TDZ?
+Yes — exactly like `let`. The extra rule for `const` is that it must be **initialized at the time of declaration** (can't declare now, assign later).
+
+```js
+const z; // ❌ SyntaxError: Missing initializer in const declaration
+```
+
+### Q25. Tricky TDZ question — what does this print?
+```js
+let x = 10;
+function test() {
+  console.log(x); // ReferenceError (TDZ), NOT 10
+  let x = 20;
+}
+test();
+```
+**Explanation:** Even though an outer `x` exists, the inner function has its own `let x` hoisted (in TDZ) for the entire function scope, so it shadows the outer one — and accessing it before declaration throws.
+
+### Q26. Does `typeof` throw an error in TDZ?
+Yes — this is a common trap. Normally `typeof undeclaredVar` returns `"undefined"` safely, but `typeof` on a `let`/`const` variable still in its TDZ throws a `ReferenceError`.
+```js
+typeof myVar; // "undefined" (myVar not declared at all)
+
+typeof myLet; // ReferenceError (myLet is let, declared later, in TDZ)
+let myLet = 1;
+```
+
+### Q27. How does hoisting work with function declarations vs function expressions?
+```js
+sayHi(); // ✅ "Hi" — function declarations are fully hoisted
+function sayHi() { console.log("Hi"); }
+
+sayBye(); // ❌ TypeError: sayBye is not a function (var hoisted as undefined)
+var sayBye = function () { console.log("Bye"); };
+
+sayHello(); // ❌ ReferenceError (TDZ, let is not initialized)
+let sayHello = function () { console.log("Hello"); };
+```
+
+### Q28. What is the temporal order of the JS execution context creation?
+1. **Memory creation phase (hoisting):** JS scans the code, allocates memory for variables (`var` → `undefined`; `let`/`const` → uninitialized/TDZ) and hoists full function declarations.
+2. **Execution phase:** Code runs line by line, assigning actual values.
+
+---
+
+# 4. Data Types: Primitive vs Non-Primitive
+
+### Q29. What are the data types in JavaScript?
+**Primitive (7 types):**
+1. `String`
+2. `Number`
+3. `Boolean`
+4. `Undefined`
+5. `Null`
+6. `Symbol` (ES6)
+7. `BigInt` (ES2020)
+
+**Non-Primitive (Reference) type:**
+8. `Object` (includes arrays, functions, dates, maps, sets, regex, etc.)
+
+### Q30. What is the difference between primitive and non-primitive (reference) types?
+
+| Aspect | Primitive | Non-Primitive (Reference) |
+|---|---|---|
+| Storage | Stored directly in the **stack** (by value) | Object stored in **heap**; variable holds a **reference/pointer** stored in stack |
+| Mutability | Immutable — value itself can't be changed | Mutable — properties can be changed |
+| Copy behavior | Copied **by value** | Copied **by reference** |
+| Comparison | Compared by **value** | Compared by **reference** (memory address) |
+| Examples | string, number, boolean, null, undefined, symbol, bigint | object, array, function, Date, Map, Set |
+
+### Q31. Explain "pass/copy by value" vs "pass/copy by reference" with code.
+```js
+// Primitive — copy by value
+let a = 10;
+let b = a;
+b = 20;
+console.log(a, b); // 10 20 (independent copies)
+
+// Non-primitive — copy by reference
+let obj1 = { val: 10 };
+let obj2 = obj1;
+obj2.val = 20;
+console.log(obj1.val, obj2.val); // 20 20 (same object in memory)
+```
+
+### Q32. Why is a string primitive even though it "looks like" it has methods (e.g., `"hi".toUpperCase()`)?
+JS temporarily **auto-boxes** primitives into a wrapper object (`String`, `Number`, `Boolean`) when a method is called on them, executes the method, then discards the wrapper. The underlying value remains a primitive.
+
+### Q33. What is `typeof null` and why is it `"object"`?
+```js
+typeof null; // "object"
+```
+This is a **long-standing bug** in JavaScript from the original 1995 implementation (null was represented internally with a type tag matching objects), kept for backward compatibility. `null` is actually a primitive type, not an object.
+
+### Q34. What is the difference between `null` and `undefined`?
+| | `undefined` | `null` |
+|---|---|---|
+| Meaning | Variable declared but not assigned a value | Intentional absence of a value, explicitly assigned |
+| Type | `typeof undefined === "undefined"` | `typeof null === "object"` |
+| Set by | JS engine automatically | Developer explicitly |
+| Equality | `undefined == null` → `true` | `undefined === null` → `false` |
+
+### Q35. What is `NaN`? How do you check if a value is `NaN`?
+`NaN` ("Not a Number") is a special `Number` type value representing an invalid/unrepresentable numeric result (e.g., `0/0`, `"abc" * 2`).
+```js
+typeof NaN; // "number"
+NaN === NaN; // false (NaN is the only value not equal to itself!)
+Number.isNaN(NaN); // true — reliable check
+isNaN("abc"); // true, but isNaN() coerces input first (less reliable)
+```
+
+### Q36. What is a `Symbol`? Give a use case.
+`Symbol` creates a **guaranteed unique** and immutable primitive value, often used as unique object property keys to avoid naming collisions.
+```js
+const id1 = Symbol("id");
+const id2 = Symbol("id");
+console.log(id1 === id2); // false — always unique
+```
+
+### Q37. What is `BigInt` and when would you use it?
+`BigInt` represents integers larger than `Number.MAX_SAFE_INTEGER` (2^53 - 1) with arbitrary precision. Created by appending `n` to a numeric literal or `BigInt()`.
+```js
+const big = 9007199254740993n;
+console.log(typeof big); // "bigint"
+```
+Note: You cannot mix `BigInt` and `Number` in arithmetic directly — throws `TypeError`.
+
+### Q38. How do you check data types in JavaScript?
+```js
+typeof "hello";      // "string"
+typeof 42;            // "number"
+typeof true;           // "boolean"
+typeof undefined;      // "undefined"
+typeof null;           // "object" (quirk)
+typeof Symbol();       // "symbol"
+typeof 10n;             // "bigint"
+typeof {};              // "object"
+typeof [];               // "object" (arrays are objects!)
+typeof function(){};       // "function"
+
+Array.isArray([]);       // true — better way to check for arrays
+Object.prototype.toString.call([]); // "[object Array]" — most reliable check
+```
+
+### Q39. Is JavaScript statically typed or dynamically typed?
+Dynamically typed — variable types are determined and can change at runtime; you don't declare types explicitly.
+
+### Q40. What is type coercion? Implicit vs explicit.
+Type coercion is automatic or manual conversion of a value from one type to another.
+```js
+// Implicit coercion
+console.log("5" + 5);   // "55" (number → string)
+console.log("5" - 1);    // 4 (string → number)
+console.log(1 + true);    // 2 (boolean → number)
+console.log([] + []);      // "" (array → string)
+console.log([] + {});       // "[object Object]"
+
+// Explicit coercion
+Number("123");   // 123
+String(123);      // "123"
+Boolean(0);        // false
+```
+
+### Q41. What are falsy and truthy values in JavaScript?
+**Falsy values (only 8):** `false`, `0`, `-0`, `0n` (BigInt zero), `""` (empty string), `null`, `undefined`, `NaN`.
+Everything else — including `"0"`, `[]`, `{}` — is **truthy**.
+
+### Q42. `==` vs `===` — explain with examples.
+`==` (loose equality) performs type coercion before comparing. `===` (strict equality) compares both value and type without coercion.
+```js
+0 == "0";      // true  (coerced)
+0 === "0";      // false
+null == undefined;  // true
+null === undefined;  // false
+NaN == NaN;      // false (always)
+```
+
+---
+
+# 5. Coding / Practical Questions
+
+### Q43. Predict the output.
+```js
+console.log(typeof typeof 1);
+```
+**Answer:** `"string"` — `typeof 1` returns `"number"` (a string), and `typeof "number"` returns `"string"`.
+
+### Q44. Predict the output (var vs let scoping).
+```js
+{
+  var x = 1;
+}
+{
+  var x = 2;
+}
+console.log(x);
+```
+**Answer:** `2` — both `var x` refer to the same variable (no block scope).
+
+### Q45. Fix the closure-in-loop bug using `var`.
+```js
+for (var i = 1; i <= 3; i++) {
+  setTimeout(() => console.log(i), 100);
+}
+// prints 4, 4, 4 — fix it without using let
+```
+**Solution using an IIFE to create a new scope per iteration:**
+```js
+for (var i = 1; i <= 3; i++) {
+  (function (j) {
+    setTimeout(() => console.log(j), 100);
+  })(i);
+}
+// prints 1, 2, 3
+```
+(Or simply switch `var` to `let`.)
+
+### Q46. What will this print?
+```js
+console.log(a);
+var a = 1;
+console.log(a);
+
+console.log(b);
+let b = 2;
+```
+**Answer:**
+```
+undefined
+1
+ReferenceError: Cannot access 'b' before initialization
+```
+
+### Q47. Write a function to deep clone an object (since objects copy by reference).
+```js
+function deepClone(obj) {
+  if (obj === null || typeof obj !== "object") return obj;
+  return JSON.parse(JSON.stringify(obj)); // simple approach (loses functions/undefined/dates precision)
+}
+
+// More robust modern approach:
+const clone = structuredClone(originalObject);
+```
+
+### Q48. Predict the output — primitive vs reference comparison.
+```js
+console.log({} === {});          // false — different references
+console.log([1,2] === [1,2]);      // false
+const a = { x: 1 };
+const b = { x: 1 };
+console.log(a == b);                // false
+console.log(a === a);               // true — same reference
+```
+
+### Q49. What does this print, and why? (const object mutation)
+```js
+const arr = [1, 2, 3];
+arr.push(4);
+console.log(arr); // [1, 2, 3, 4] — allowed, mutating contents
+arr = [5, 6];       // ❌ TypeError: Assignment to constant variable.
+```
+
+### Q50. Write code demonstrating TDZ with `typeof`.
+```js
+function demoTDZ() {
+  try {
+    console.log(typeof value);
+  } catch (e) {
+    console.log(e.message); // "Cannot access 'value' before initialization"
+  }
+  let value = "Hello";
+}
+demoTDZ();
+```
+
+### Q51. Convert types without using built-in conversion functions.
+```js
+// String to Number
+let str = "123";
+let num = +str;         // 123
+let num2 = str * 1;      // 123
+
+// Number to String
+let n = 123;
+let s = n + "";           // "123"
+
+// Any value to Boolean
+let val = "hello";
+let bool = !!val;          // true
+```
+
+### Q52. Swap two variables without a temporary variable (destructuring).
+```js
+let x = 5, y = 10;
+[x, y] = [y, x];
+console.log(x, y); // 10 5
+```
+
+### Q53. Write a function that checks if a value is primitive or not.
+```js
+function isPrimitive(value) {
+  return value === null || (typeof value !== "object" && typeof value !== "function");
+}
+
+console.log(isPrimitive(10));        // true
+console.log(isPrimitive("hi"));       // true
+console.log(isPrimitive(null));        // true
+console.log(isPrimitive({}));           // false
+console.log(isPrimitive([]));            // false
+console.log(isPrimitive(function(){}));  // false
+```
+
+### Q54. Predict output — hoisting with function + var of same name.
+```js
+var foo = "bar";
+function foo() {}
+console.log(typeof foo);
+```
+**Answer:** `"string"`. During hoisting, the function declaration `foo` is hoisted first, then `var foo` (hoisting for `var` doesn't override existing function bindings, only adds `undefined` if not already set). Then during execution, `foo = "bar"` runs and overwrites it — final value is the string `"bar"`.
+
+### Q55. What's the output? (block scope + closures with let)
+```js
+const funcs = [];
+for (let i = 0; i < 3; i++) {
+  funcs.push(() => console.log(i));
+}
+funcs.forEach(fn => fn());
+```
+**Answer:** `0 1 2` — each iteration of `let` creates a fresh binding captured correctly by the closure.
+
+---
+
+# 6. Rapid-Fire / Quick Answer Round
+
+1. **Can `let` be redeclared in the same scope?** No.
+2. **Can `const` array elements be changed?** Yes, mutated — not reassigned.
+3. **Is `var` hoisting the same as `let` hoisting?** Both are hoisted, but `var` initializes to `undefined`; `let`/`const` remain in TDZ.
+4. **Does TDZ apply to function parameters?** Yes, if using `let`/`const`-style default parameter evaluation referencing a later param.
+5. **What's the size of `Number.MAX_SAFE_INTEGER`?** `2^53 - 1` (9007199254740991).
+6. **Is an array a primitive type?** No, it's an object (non-primitive).
+7. **What does `typeof function(){}` return?** `"function"` (a special callable object).
+8. **Are `let`/`const` hoisted?** Yes — but not initialized (TDZ), unlike `var`.
+9. **What ES version introduced `let`/`const`?** ES6 (ES2015).
+10. **What ES version introduced optional chaining `?.`?** ES2020.
+
+---
+
+## How to Use This Guide
+- Read through concepts first, then attempt the coding questions **without looking at answers**.
+- Practice explaining the "why" out loud — interviewers care more about reasoning (hoisting mechanics, TDZ, memory model) than memorized definitions.
+- Re-run all code snippets in a browser console or Node REPL to build muscle memory.
+
+Good luck with your interview! 🚀
+-->
+
+
+
+
+
+
+
+
 
     <script src="1-basic.js"></script>
 </body>
