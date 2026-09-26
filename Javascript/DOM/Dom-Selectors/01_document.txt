@@ -1,0 +1,27 @@
+ InnerText:
+
+ InnerHTML:
+
+ textContent:
+
+ HTMLCollection:
+
+ nodeList:
+  
+ * QuerySelectors:
+
+document.QuerySelector('input[type="password]);
+
+QuerySelectorAll:
+
+ const tempLiList = document.QuerySelectorAll('li');
+ tempLiList[0].style.color="green"   -> only the first list is green.
+
+
+ getElementByzclassName:
+
+
+ *converting a HTMLCollection into an array
+
+ Array.from(tempListItems)
+ 
