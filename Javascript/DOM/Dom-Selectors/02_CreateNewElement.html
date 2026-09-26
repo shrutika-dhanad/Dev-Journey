@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="Parent">
+   <div class="day">Mon</div>
+   <div class="day">tues</div>
+   <div class="day">wedn</div>
+   <div class="day">Thurs</div>
+
+    </div>
+
+    <script>
+
+const myParent= document.querySelector('.Parent')
+console.log(myParent)
+console.log(myParent.children)
+
+
+
+for(let i=0; i<myParent.children.length; i++){
+    console.log(myParent.children[i].innerHTML)
+}
+    </script>
+</body>
+</html>
