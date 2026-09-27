@@ -25,6 +25,19 @@ console.log(myParent.children)
 for(let i=0; i<myParent.children.length; i++){
     console.log(myParent.children[i].innerHTML)
 }
+
+myParent.children[1].style.color="orange";
+console.log(myParent.firstElementChild.innerHTML)
+console.log(myParent.lastElementChild)
+
+
+const daayOne= document.querySelector('.day')
+console.log(daayOne)
+
+console.log(daayOne.parentElement)
+console.log(daayOne.nextElementSibling)
+
+console.log("Nodess : " , myParent.childNodes)
     </script>
 </body>
 </html>
