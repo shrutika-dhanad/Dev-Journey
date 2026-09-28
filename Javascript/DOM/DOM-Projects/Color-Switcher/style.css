@@ -1,0 +1,35 @@
+.mainClass{
+margin: 100px auto 100px;
+height: 100%;
+width: 100%;
+text-align: center;
+}
+
+span{
+    display: block;
+
+}
+.button{
+    height: 100px;
+    width: 100px;
+    border:2px solid black;
+    display: inline-block;
+}
+#grey{
+    background:grey;
+}
+#pink{
+    background:pink;
+}
+#yellow{
+    background:yellow;
+}
+#blue{
+    background:blue;
+}
+#green{
+    background:green;
+}
+#aqua{
+    background:aqua;
+}
