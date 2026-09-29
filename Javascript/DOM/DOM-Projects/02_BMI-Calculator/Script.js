@@ -1,21 +1,48 @@
-const myForms= document.querySelector('.myForm')
-myForms.addEventListener('submit', function(e){
-    e.preventDefault();
+// const myForms= document.querySelector('.myForm')
+// myForms.addEventListener('submit', function(e){
+//     e.preventDefault();
 
 
-    const height = parseInt(document.querySelector('#height').value);
-    const weight = parseInt(document.querySelector('#weight').value);
+//     const height = parseInt(document.querySelector('#height').value);
+//     const weight = parseInt(document.querySelector('#weight').value);
  
-    const result = document.querySelector('#results')
+//     const result = document.querySelector('#results')
 
-    if(height=== ' '  || height < 0 || isNaN(height)){
-        result.innerHTML=`enter a valid height ${height}`
-    }else if(weight=== ' '  || weight < 0 || isNaN(weight)){
-        result.innerHTML=`enter a valid weight ${weight}`
-    }else{
+//     if(height=== ' '  || height < 0 || isNaN(height)){
+//         result.innerHTML=`enter a valid height ${height}`
+//     }else if(weight=== ' '  || weight < 0 || isNaN(weight)){
+//         result.innerHTML=`enter a valid weight ${weight}`
+//     }else{
         
-    const bmi = (weight/((height*height)/10000)).toFixed(2);
-    result.innerHTML=`<span>${bmi}</span>`
+//     const bmi = (weight/((height*height)/10000)).toFixed(2);
+//     result.innerHTML=`<span>${bmi}</span>`
 
-}
+// }
+// })
+
+
+const myForms= document.querySelector('form');
+
+myForms.addEventListener('submit', function(e){
+ e.preventDefault();
+ 
+
+    const  result = document.querySelector('#results')
+
+    const height = parseInt(document.querySelector('#height').value)
+    const weight = parseInt(document.querySelector('#weight').value)
+
+
+    if(height=== ' ' || height < 0 || isNaN(height)){
+        result.innerHTML=`give a valid height ${height}`
+    }else if ((weight=== ' ' || weight < 0 || isNaN(weight))){
+        result.innerHTML=` give a  valied weight ${weight}`
+    }else{
+        const bmi = (weight/((height*height)/10000)).toFixed(2);
+
+       result.innerHTML= `<span>${bmi}</span>`
+
+
+    }
+
 })
