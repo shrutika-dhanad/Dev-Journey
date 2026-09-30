@@ -1,0 +1,48 @@
+//false- there are multiple application which will give in a interview
+//thise application will not run when do not written the true/false
+//  > 
+
+//attachEvent- > it was used previous 
+//jQuery ->  onEvent
+
+Types of event:
+
+timestamp:
+
+defaultPrevented:
+
+target:
+
+toElement:
+
+srcElement: 
+
+currentTarget:
+
+clientX:
+
+clientY:
+
+ScreenX:
+
+ScreenY:
+
+altKey:
+
+ctrlKey:
+
+shiftKey:
+
+keyCode:
+
+Event Propogation: 
+
+Bubbling - > false - element will goes from inside to outside element its a event Propogation
+
+capturing mode - >true -  from top to bottom
+
+stopPropogation - > when we use thee stopPropogation the event will not get bubbled and not 
+going to upper 
+
+
+preventDefault - 

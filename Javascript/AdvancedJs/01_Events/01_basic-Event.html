@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        
+    </style>
+</head>
+<body>
+
+    
+    <div>
+
+        <ul id="images">
+
+   <li><img  height="200px" width="200px" src="download (16).jpg"  id ="img1" alt="one"></li>
+   <li><img height="200px" width="200px" src="download (17).jpg"  id="img2" alt="two"></li>
+   <li><img height="200px" width="200px"   src="keshav.webp"         id="img3" alt="three"></li>
+   <li><img height="200px" width="200px"  src="PriteshProfile.jpg"  id="img4" alt="four"></li>
+        
+   <li><a style="color: rgb(1, 67, 125);" href="https://google.com" id="Google">Google</a></li>
+
+        </ul>
+
+
+    </div>
+
+
+
+<script>
+
+//*************bubbling mode ************************
+
+//    document.getElementById('images').addEventListener('click', function(e){
+//     console.log("cliked on inside an ul")
+//    })
+//    document.getElementById('img1').addEventListener('click', function(e){
+//     console.log("img 1 is clicked..")
+//    })
+
+
+//****************capturing mode ****************************************//
+
+// document.getElementById('images').addEventListener('click', function(e){
+//     console.log("clicked on inside an ul")
+// }, true)
+// document.getElementById('img1').addEventListener('click', function(e){
+//     console.log("clicked on img 1")
+ 
+// }, true)
+
+
+//****************capturing mode ****************************************//
+
+ document.getElementById('images').addEventListener('click', function(e){
+    console.log("cliked on inside an ul")
+   })
+   document.getElementById('img1').addEventListener('click', function(e){
+    console.log("img 1 is clicked..")
+    // e.stopPropagation()  //event bubble houn ata top chya ele wr nahi janar -> onli img 1 is clicked print hoil 
+
+   })
+
+
+//****************prevent Default ****************************************//
+
+
+document.getElementById('Google').addEventListener('click', function(e){
+    console.log("google clicked")
+    e.preventDefault();
+    e.stopPropagation()
+
+})
+
+    </script>
+</body>
+</html>
