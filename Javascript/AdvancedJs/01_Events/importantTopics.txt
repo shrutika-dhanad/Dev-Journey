@@ -5,6 +5,10 @@
 //attachEvent- > it was used previous 
 //jQuery ->  onEvent
 
+Event:- def
+_------  >> 
+
+
 Types of event:
 
 timestamp:
@@ -46,3 +50,1774 @@ going to upper
 
 
 preventDefault - 
+
+
+
+gpt instead of u which platform is best for learning a js doucmentation
+
+Yes. If you mean “Instead of learning JavaScript documentation from ChatGPT, which platform should I use?”, I’d recommend using MDN + JavaScript.info together.
+
+🥇 1. MDN Web Docs — best for documentation/reference
+
+MDN Web Docs is the one I would make your main JavaScript documentation.
+
+MDN JavaScript Documentation
+
+It has:
+
+JavaScript Guide
+JavaScript Reference
+Array, String, Object, Map, Set, etc.
+Functions, promises, async/await
+DOM and Web APIs
+Detailed syntax and examples
+Regularly updated documentation
+
+Use MDN when: you already understand a topic and want to know exactly how it works and how a method/API is used.
+
+🥈 2. JavaScript.info — best for learning concepts
+
+javascript.info
+
+JavaScript.info – The Modern JavaScript Tutorial
+
+I actually think JavaScript.info will suit your current learning style better than MDN for studying concepts.
+
+It goes step-by-step through:
+
+Variables → Data Types → Functions → Objects → Arrays → Array Methods → Closures → Prototypes → Classes → Error Handling → Promises → Async/Await → Modules → DOM → Events
+
+Use JavaScript.info when: you are learning a topic for the first time and want a proper explanation.
+
+🥉 3. freeCodeCamp — for practice
+
+freeCodeCamp
+
+freeCodeCamp
+
+Use it for hands-on practice, exercises and projects rather than as your primary documentation.
+
+For YOU, I would use this combination
+
+Since you're currently focusing heavily on JavaScript and preparing for development/interviews, don't try to learn everything from one website.
+
+Your workflow:
+
+🎥 Course/video → understand the concept
+📖 JavaScript.info → learn the concept properly
+📚 MDN → check the official documentation/reference
+💻 VS Code → write code yourself
+🧩 Practice → solve questions/projects
+🤖 ChatGPT → ask doubts, get explanations in English + Marathi, interview questions, debugging
+
+For example, if you're learning reduce():
+
+1. JavaScript.info → understand how array methods work
+2. MDN → check the exact reduce() syntax, parameters and edge cases
+3. VS Code → write 10 examples
+4. ChatGPT → ask for interview questions and tricky examples
+
+My recommendation for your JS study
+
+Main learning: JavaScript.info ⭐
+Official reference: MDN ⭐⭐⭐
+Practice: freeCodeCamp
+Doubts/explanations: ChatGPT
+
+And one important point: don't start with the ECMAScript specification. MDN itself explains that the specification is primarily for implementing the language, not for learning JavaScript as a programmer.
+
+If you want, I can also give you a 
+complete JavaScript documentation study roadmap from beginner → advanced → React, using only free resources.
+
+Bluehost
+
+Check VPS Plans & Pricing
+
+Full root access, 99.9% uptime & 24/7 support. Join 5M+ on Bluehost.
+
+Ad
+More options
+what is a event in js explain all concept in detail not in short with interview qs and also the coding qs
+
+Absolutely. Since you're focusing on JavaScript, let's study Events in JavaScript as a complete interview chapter, not just a short definition.
+
+JavaScript Events — Complete Notes
+1. What is an Event in JavaScript?
+
+An event is an action or occurrence that happens in the browser and that JavaScript can detect and respond to.
+
+For example:
+
+User clicks a button → click event
+User types in an input → input event
+User submits a form → submit event
+Mouse moves → mousemove event
+Keyboard key is pressed → keydown event
+Page finishes loading → load event
+
+In simple language:
+
+Event = Something happens, and JavaScript can execute code in response to it.
+
+Example
+<button id="btn">Click Me</button>
+
+<script>
+const button = document.querySelector("#btn");
+
+button.addEventListener("click", function () {
+    console.log("Button was clicked");
+});
+</script>
+
+Here:
+
+User clicks button
+       ↓
+click event occurs
+       ↓
+JavaScript detects event
+       ↓
+callback function executes
+       ↓
+"Button was clicked"
+2. Why do we need Events?
+
+JavaScript can make a webpage interactive.
+
+Without events:
+
+HTML → Static webpage
+
+With JavaScript events:
+
+HTML
+ ↓
+User interaction
+ ↓
+Event
+ ↓
+JavaScript
+ ↓
+Action
+
+For example, on an e-commerce website:
+
+Click "Add to Cart"
+        ↓
+click event
+        ↓
+JavaScript
+        ↓
+Product added to cart
+3. Types of JavaScript Events
+
+There are many events. We can categorize them.
+
+1. Mouse Events
+click
+dblclick
+mousedown
+mouseup
+mousemove
+mouseenter
+mouseleave
+mouseover
+mouseout
+contextmenu
+2. Keyboard Events
+keydown
+keyup
+keypress
+
+keypress is deprecated, so generally use keydown and keyup.
+
+3. Form Events
+submit
+input
+change
+focus
+blur
+reset
+4. Window/Document Events
+load
+DOMContentLoaded
+resize
+scroll
+unload
+5. Clipboard Events
+copy
+cut
+paste
+6. Drag Events
+drag
+dragstart
+dragend
+dragover
+drop
+4. Three Ways to Handle Events
+
+There are three common approaches.
+
+Method 1 — Inline Event Handler
+<button onclick="sayHello()">Click</button>
+
+<script>
+function sayHello() {
+    console.log("Hello");
+}
+</script>
+
+Here:
+
+onclick="sayHello()"
+
+is an inline event handler.
+
+Problem
+
+It mixes HTML and JavaScript.
+
+For larger applications, this is generally avoided.
+
+5. DOM Event Property
+
+You can assign a function to an event property.
+
+const button = document.querySelector("#btn");
+
+button.onclick = function () {
+    console.log("Clicked");
+};
+
+Another example:
+
+button.onclick = () => {
+    alert("Hello");
+};
+Important problem
+
+If you assign another function:
+
+button.onclick = function () {
+    console.log("First");
+};
+
+button.onclick = function () {
+    console.log("Second");
+};
+
+Only:
+
+Second
+
+will execute.
+
+The second assignment overwrites the first.
+
+6. addEventListener() — Most Important
+
+The modern and preferred way to handle events is:
+
+element.addEventListener(event, callback);
+
+Example:
+
+const button = document.querySelector("#btn");
+
+button.addEventListener("click", function () {
+    console.log("Button clicked");
+});
+Syntax
+element.addEventListener("eventName", function);
+
+Example:
+
+button.addEventListener("click", handleClick);
+7. Why addEventListener() is Important
+
+You can attach multiple listeners to the same event.
+
+button.addEventListener("click", function () {
+    console.log("First");
+});
+
+button.addEventListener("click", function () {
+    console.log("Second");
+});
+
+Output:
+
+First
+Second
+
+Unlike:
+
+button.onclick = ...
+
+the second listener doesn't replace the first.
+
+8. Callback Function in Events
+
+This is very important.
+
+button.addEventListener("click", function () {
+    console.log("Clicked");
+});
+
+This function:
+
+function () {
+    console.log("Clicked");
+}
+
+is called a callback function.
+
+Why?
+
+Because we are giving the function to addEventListener(), and JavaScript will call it when the event occurs.
+
+Important difference
+
+❌ Don't do:
+
+button.addEventListener("click", handleClick());
+
+Because this immediately calls the function.
+
+Correct:
+
+button.addEventListener("click", handleClick);
+9. The Event Object
+
+When an event occurs, JavaScript creates an Event object containing information about that event.
+
+Example:
+
+button.addEventListener("click", function (event) {
+    console.log(event);
+});
+
+The parameter:
+
+event
+
+contains information about what happened.
+
+You can name it anything:
+
+function (e) {}
+
+or:
+
+function (event) {}
+
+Both are fine.
+
+10. Important Properties of Event Object
+
+Some commonly used properties:
+
+event.type
+event.target
+event.currentTarget
+event.clientX
+event.clientY
+event.key
+event.code
+
+Let's understand them.
+
+11. event.type
+
+Returns the type of event.
+
+button.addEventListener("click", function (event) {
+    console.log(event.type);
+});
+
+Output:
+
+click
+
+For keyboard:
+
+input.addEventListener("keydown", function (event) {
+    console.log(event.type);
+});
+
+Output:
+
+keydown
+12. event.target
+
+target tells you the element on which the event originally occurred.
+
+Example:
+
+<button id="btn">Click Me</button>
+const button = document.querySelector("#btn");
+
+button.addEventListener("click", function (event) {
+    console.log(event.target);
+});
+
+Output will refer to:
+
+<button id="btn">Click Me</button>
+
+You can also get its text:
+
+console.log(event.target.textContent);
+13. event.currentTarget
+
+This is a very important interview question.
+
+currentTarget refers to the element whose event listener is currently executing.
+
+Example:
+
+parent.addEventListener("click", function (event) {
+    console.log(event.target);
+    console.log(event.currentTarget);
+});
+
+If you click a child element:
+
+target → child
+currentTarget → parent
+
+We'll understand why when we learn event bubbling.
+
+14. target vs currentTarget
+
+This is an extremely common interview question.
+
+Suppose:
+
+<div id="parent">
+    <button id="child">Click</button>
+</div>
+
+JavaScript:
+
+parent.addEventListener("click", function (event) {
+    console.log("Target:", event.target);
+    console.log("Current:", event.currentTarget);
+});
+
+If you click the button:
+
+event.target
+      ↓
+button
+
+event.currentTarget
+      ↓
+div
+Remember:
+
+target = where the event started.
+
+currentTarget = where the current listener is attached.
+
+15. Mouse Events
+click
+
+Occurs when an element is clicked.
+
+button.addEventListener("click", () => {
+    console.log("Clicked");
+});
+dblclick
+
+Double click.
+
+button.addEventListener("dblclick", () => {
+    console.log("Double clicked");
+});
+mouseenter
+
+Occurs when the mouse enters an element.
+
+box.addEventListener("mouseenter", () => {
+    console.log("Mouse entered");
+});
+mouseleave
+
+Occurs when mouse leaves.
+
+box.addEventListener("mouseleave", () => {
+    console.log("Mouse left");
+});
+mousemove
+
+Occurs when mouse moves.
+
+box.addEventListener("mousemove", () => {
+    console.log("Mouse moving");
+});
+
+Be careful with this event because it can fire very frequently.
+
+16. Mouse Position
+
+You can get mouse coordinates.
+
+document.addEventListener("mousemove", function (event) {
+    console.log(event.clientX);
+    console.log(event.clientY);
+});
+clientX
+
+Horizontal position relative to viewport.
+
+clientY
+
+Vertical position relative to viewport.
+
+17. Keyboard Events
+
+The main keyboard events are:
+
+keydown
+keyup
+keydown
+
+Occurs when a key is pressed.
+
+document.addEventListener("keydown", function (event) {
+    console.log(event.key);
+});
+
+If you press A:
+
+a
+
+If you press Enter:
+
+Enter
+18. event.key
+
+Returns the value/name of the key.
+
+document.addEventListener("keydown", function (event) {
+    console.log(event.key);
+});
+
+Examples:
+
+a
+Enter
+Escape
+ArrowUp
+Shift
+19. event.code
+
+code represents the physical key location.
+
+document.addEventListener("keydown", function (event) {
+    console.log(event.code);
+});
+
+Press A:
+
+KeyA
+
+Press Enter:
+
+Enter
+key vs code
+
+key → actual character/value.
+
+code → physical keyboard key.
+
+This distinction can matter with keyboard layouts.
+
+20. Form Events
+
+Forms are extremely important for frontend development.
+
+Example:
+
+<form id="form">
+    <input id="username">
+    <button type="submit">Submit</button>
+</form>
+21. submit Event
+const form = document.querySelector("#form");
+
+form.addEventListener("submit", function (event) {
+    console.log("Form submitted");
+});
+
+But there's an important issue.
+
+By default, submitting a form may reload/navigate the page.
+
+We often use:
+
+event.preventDefault();
+22. preventDefault()
+
+This prevents the browser's default behavior.
+
+Example:
+
+form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    console.log("Form submitted");
+});
+
+Now the normal form submission behavior is prevented.
+
+Common uses
+Form validation
+Preventing page reload
+Custom links
+Drag/drop
+Custom browser behavior
+23. input Event
+
+The input event occurs whenever the value of an input changes as the user types.
+
+input.addEventListener("input", function (event) {
+    console.log(event.target.value);
+});
+
+If the user types:
+
+Hello
+
+you'll see the changing value.
+
+This is useful for:
+
+Search boxes
+Live validation
+Character counters
+Password strength
+Live previews
+24. change Event
+
+change occurs when the value has been changed and the change is committed.
+
+For example:
+
+select.addEventListener("change", function (event) {
+    console.log(event.target.value);
+});
+input vs change
+
+This is a common interview question.
+
+For text input:
+
+input
+ ↓
+fires while typing
+
+change
+ ↓
+fires when the value is committed/changed
+
+For a <select>, change is especially commonly used.
+
+25. focus
+
+Occurs when an element receives focus.
+
+input.addEventListener("focus", function () {
+    console.log("Input focused");
+});
+26. blur
+
+Occurs when an element loses focus.
+
+input.addEventListener("blur", function () {
+    console.log("Input lost focus");
+});
+27. Event Bubbling
+
+Now we reach one of the most important event concepts for interviews.
+
+Suppose:
+
+<div id="parent">
+    <button id="child">Click Me</button>
+</div>
+
+And:
+
+parent.addEventListener("click", () => {
+    console.log("Parent");
+});
+
+child.addEventListener("click", () => {
+    console.log("Child");
+});
+
+Click the button.
+
+Output:
+
+Child
+Parent
+
+Why?
+
+Because the event starts at the button and bubbles upward.
+
+Button
+  ↑
+Parent
+  ↑
+Body
+  ↑
+HTML
+  ↑
+Document
+  ↑
+Window
+
+This is called:
+
+Event Bubbling
+28. Event Capturing
+
+Events also have a capturing phase.
+
+The general event flow is:
+
+CAPTURING PHASE
+       ↓
+Window
+       ↓
+Document
+       ↓
+HTML
+       ↓
+Body
+       ↓
+Parent
+       ↓
+Target
+       ↓
+BUBBLING PHASE
+       ↑
+Parent
+       ↑
+Body
+       ↑
+HTML
+       ↑
+Document
+       ↑
+Window
+
+Simplified:
+
+Capture → Target → Bubble
+29. Capture Phase Example
+
+Normally:
+
+parent.addEventListener("click", handler);
+
+uses the bubbling phase.
+
+To use capturing:
+
+parent.addEventListener("click", handler, true);
+
+or:
+
+parent.addEventListener("click", handler, {
+    capture: true
+});
+
+Example:
+
+parent.addEventListener("click", () => {
+    console.log("Parent");
+}, true);
+
+child.addEventListener("click", () => {
+    console.log("Child");
+});
+
+When child is clicked:
+
+Parent
+Child
+
+because the parent listener is running during the capture phase.
+
+30. stopPropagation()
+
+Sometimes you don't want an event to continue propagating.
+
+Use:
+
+event.stopPropagation();
+
+Example:
+
+child.addEventListener("click", function (event) {
+    event.stopPropagation();
+
+    console.log("Child");
+});
+
+Now the click won't continue bubbling to the parent through the normal propagation path.
+
+31. stopPropagation() vs preventDefault()
+
+Very common interview question.
+
+preventDefault()
+
+Stops the browser's default action.
+
+event.preventDefault();
+
+Example:
+
+Form submit → prevent page navigation/reload
+stopPropagation()
+
+Stops the event from propagating through the DOM.
+
+event.stopPropagation();
+
+Example:
+
+Child → Parent → Body
+
+can be stopped.
+
+Easy memory trick
+preventDefault()
+      ↓
+Browser's default action
+
+stopPropagation()
+      ↓
+Event's journey through DOM
+32. stopImmediatePropagation()
+
+There is another method:
+
+event.stopImmediatePropagation();
+
+It stops:
+
+Event propagation
+Other event listeners on the same element from executing
+
+Example:
+
+button.addEventListener("click", () => {
+    console.log("First");
+});
+
+button.addEventListener("click", (event) => {
+    event.stopImmediatePropagation();
+
+    console.log("Second");
+});
+
+button.addEventListener("click", () => {
+    console.log("Third");
+});
+
+Output:
+
+First
+Second
+
+Third won't execute.
+
+33. Event Delegation
+
+This is very important for interviews and real projects.
+
+Suppose you have:
+
+<ul id="list">
+    <li>Apple</li>
+    <li>Banana</li>
+    <li>Mango</li>
+    <li>Orange</li>
+</ul>
+
+Instead of adding a listener to every <li>:
+
+li1.addEventListener(...)
+li2.addEventListener(...)
+li3.addEventListener(...)
+li4.addEventListener(...)
+
+we can add one listener to the parent:
+
+const list = document.querySelector("#list");
+
+list.addEventListener("click", function (event) {
+    console.log(event.target.textContent);
+});
+
+Now clicking different <li> elements works.
+
+This is:
+
+Event Delegation
+
+It relies heavily on event bubbling.
+
+34. Why Event Delegation is Useful
+
+Imagine:
+
+1000 buttons
+
+Instead of:
+
+1000 event listeners
+
+you can sometimes use:
+
+1 parent event listener
+
+Advantages:
+
+Less event-listener overhead
+Cleaner code
+Works well with dynamically created elements
+Useful for lists, tables, menus, etc.
+35. matches() with Event Delegation
+
+Suppose:
+
+<div id="container">
+    <button class="delete">Delete</button>
+    <button class="edit">Edit</button>
+</div>
+
+We can do:
+
+container.addEventListener("click", function (event) {
+
+    if (event.target.matches(".delete")) {
+        console.log("Delete clicked");
+    }
+
+    if (event.target.matches(".edit")) {
+        console.log("Edit clicked");
+    }
+
+});
+36. closest() with Event Delegation
+
+Sometimes you click an element inside a button.
+
+Example:
+
+<button class="delete">
+    <span>Delete</span>
+</button>
+
+If you click the <span>:
+
+event.target
+
+may be:
+
+<span>
+
+You can find the closest button:
+
+const button = event.target.closest(".delete");
+
+This is very useful in real-world DOM manipulation.
+
+37. Removing Event Listeners
+
+You can remove an event listener with:
+
+removeEventListener()
+
+Example:
+
+function handleClick() {
+    console.log("Clicked");
+}
+
+button.addEventListener("click", handleClick);
+
+button.removeEventListener("click", handleClick);
+Important
+
+This works:
+
+function handleClick() {}
+
+button.addEventListener("click", handleClick);
+
+button.removeEventListener("click", handleClick);
+
+But this generally doesn't work:
+
+button.addEventListener("click", function () {
+    console.log("Hello");
+});
+
+button.removeEventListener("click", function () {
+    console.log("Hello");
+});
+
+Why?
+
+Because those are two different function objects.
+
+38. { once: true }
+
+You can make an event listener execute only once.
+
+button.addEventListener("click", function () {
+    console.log("Clicked");
+}, {
+    once: true
+});
+
+Click 1:
+
+Clicked
+
+Click 2:
+
+Nothing
+39. Event Listener Options
+
+addEventListener() can receive an options object.
+
+element.addEventListener("click", handler, {
+    capture: true,
+    once: true,
+    passive: true
+});
+
+Important options:
+
+capture
+capture: true
+
+Runs listener during capturing.
+
+once
+once: true
+
+Runs only once.
+
+passive
+passive: true
+
+Indicates that the listener will not call preventDefault().
+
+This can help browser performance for certain events such as scrolling/touch-related events.
+
+40. DOMContentLoaded
+
+Another important event:
+
+document.addEventListener("DOMContentLoaded", function () {
+    console.log("HTML loaded");
+});
+
+It fires when the HTML document has been completely parsed.
+
+It does not wait for every image and other external resource to finish loading.
+
+41. load
+
+Example:
+
+window.addEventListener("load", function () {
+    console.log("Everything loaded");
+});
+
+The load event waits for the page and its dependent resources to load.
+
+Difference
+DOMContentLoaded
+        ↓
+HTML parsing completed
+
+load
+        ↓
+Page/resources loaded
+42. scroll
+window.addEventListener("scroll", function () {
+    console.log(window.scrollY);
+});
+
+Used for:
+
+Sticky navigation
+Scroll animations
+Infinite scrolling
+Back-to-top buttons
+
+Again, scroll events can fire frequently, so performance matters.
+
+43. resize
+window.addEventListener("resize", function () {
+    console.log(window.innerWidth);
+});
+
+Runs when the browser window changes size.
+
+44. Custom Events
+
+JavaScript also allows you to create your own events.
+
+Example:
+
+const event = new CustomEvent("userLogin", {
+    detail: {
+        username: "Shrutika"
+    }
+});
+
+Then:
+
+document.addEventListener("userLogin", function (event) {
+    console.log(event.detail.username);
+});
+
+Dispatch:
+
+document.dispatchEvent(event);
+
+Output:
+
+Shrutika
+
+This is called a custom event.
+
+45. Event Flow — Important Interview Concept
+
+When an event occurs, it generally travels through three phases:
+
+1. Capturing
+       ↓
+2. Target
+       ↓
+3. Bubbling
+
+Remember this diagram:
+
+          Window
+             ↓
+          Document
+             ↓
+            HTML
+             ↓
+            Body
+             ↓
+          Parent
+             ↓
+          Button
+             ↑
+        TARGET
+             ↑
+          Parent
+             ↑
+            Body
+             ↑
+            HTML
+             ↑
+          Document
+             ↑
+          Window
+46. this Inside Event Listener
+
+Consider:
+
+button.addEventListener("click", function () {
+    console.log(this);
+});
+
+For a normal function used as an event listener, this generally refers to the element on which the listener is registered.
+
+So:
+
+this === button
+
+But with an arrow function:
+
+button.addEventListener("click", () => {
+    console.log(this);
+});
+
+Arrow functions don't create their own this; they inherit it from the surrounding lexical scope.
+
+This is a useful interview concept.
+
+47. Practical Example — Counter
+
+HTML:
+
+<button id="decrease">-</button>
+<span id="count">0</span>
+<button id="increase">+</button>
+
+JavaScript:
+
+const increase = document.querySelector("#increase");
+const decrease = document.querySelector("#decrease");
+const count = document.querySelector("#count");
+
+let value = 0;
+
+increase.addEventListener("click", function () {
+    value++;
+    count.textContent = value;
+});
+
+decrease.addEventListener("click", function () {
+    value--;
+    count.textContent = value;
+});
+
+This small project teaches:
+
+DOM selection
++
+click event
++
+callback
++
+state/value
++
+DOM update
+48. Practical Example — Input Character Counter
+
+HTML:
+
+<textarea id="message"></textarea>
+
+<p>Characters: <span id="count">0</span></p>
+
+JavaScript:
+
+const message = document.querySelector("#message");
+const count = document.querySelector("#count");
+
+message.addEventListener("input", function () {
+    count.textContent = message.value.length;
+});
+
+This is a good beginner event project.
+
+49. Practical Example — Form Validation
+const form = document.querySelector("#form");
+const username = document.querySelector("#username");
+
+form.addEventListener("submit", function (event) {
+
+    event.preventDefault();
+
+    if (username.value.trim() === "") {
+        console.log("Username is required");
+        return;
+    }
+
+    console.log("Form submitted successfully");
+});
+
+Important concepts:
+
+submit event
+event object
+preventDefault()
+value
+trim()
+conditional statement
+50. Practical Example — Event Delegation
+
+HTML:
+
+<ul id="products">
+    <li>
+        <button class="delete">Delete Apple</button>
+    </li>
+
+    <li>
+        <button class="delete">Delete Banana</button>
+    </li>
+
+    <li>
+        <button class="delete">Delete Mango</button>
+    </li>
+</ul>
+
+JavaScript:
+
+const products = document.querySelector("#products");
+
+products.addEventListener("click", function (event) {
+
+    if (event.target.matches(".delete")) {
+        event.target.closest("li").remove();
+    }
+
+});
+
+This is a very good interview-level practical question.
+
+JavaScript Events — Interview Questions
+
+Now let's move to the interview part.
+
+Beginner Questions
+Q1. What is an event in JavaScript?
+
+An event is an action or occurrence detected by the browser, such as a click, key press, form submission, mouse movement, or page loading.
+
+Q2. What is an event handler?
+
+An event handler is a function that executes when a particular event occurs.
+
+button.addEventListener("click", handleClick);
+
+function handleClick() {
+    console.log("Clicked");
+}
+Q3. What is addEventListener()?
+
+It is a method used to attach an event listener to an element.
+
+element.addEventListener("click", handler);
+Q4. What is the difference between onclick and addEventListener()?
+
+onclick assigns one event handler and a later assignment can overwrite the previous one.
+
+addEventListener() allows multiple listeners for the same event and provides options such as capture and once.
+
+Q5. What is an event object?
+
+It is an object automatically provided to an event handler that contains information about the event.
+
+button.addEventListener("click", function (event) {
+    console.log(event.type);
+});
+Q6. What is event.target?
+
+It refers to the element where the event originally occurred.
+
+Q7. What is event.currentTarget?
+
+It refers to the element whose event listener is currently executing.
+
+Q8. What is event bubbling?
+
+Event bubbling is the process where an event propagates from the target element upward through its ancestors.
+
+Child → Parent → Body → HTML → Document
+Q9. What is event capturing?
+
+Event capturing is the phase where an event travels from the outer ancestor elements toward the target.
+
+Document → HTML → Body → Parent → Child
+Q10. What is event delegation?
+
+Event delegation is a technique where an event listener is attached to a parent element instead of multiple child elements, using event propagation to handle events from the children.
+
+Intermediate Interview Questions
+Q11. What is the difference between preventDefault() and stopPropagation()?
+Method	Purpose
+preventDefault()	Stops browser's default action
+stopPropagation()	Stops event propagation
+Q12. What is stopImmediatePropagation()?
+
+It prevents the event from propagating and also prevents other listeners on the same element from executing after it.
+
+Q13. What is the difference between target and currentTarget?
+target
+↓
+Element where event originated
+
+currentTarget
+↓
+Element whose listener is currently running
+Q14. What is the difference between input and change?
+
+input generally fires whenever the value changes during user input.
+
+change fires when a value change is committed, with exact behavior depending on the form control.
+
+Q15. What is DOMContentLoaded?
+
+It fires when the HTML document has been completely parsed.
+
+It doesn't wait for all images and external resources to finish loading.
+
+Q16. What is the difference between load and DOMContentLoaded?
+DOMContentLoaded
+→ HTML parsing completed
+
+load
+→ Page and dependent resources loaded
+Q17. What does { once: true } do?
+
+It causes the listener to automatically stop listening after it executes once.
+
+Q18. Why is event delegation useful?
+
+It can reduce the number of event listeners, simplify code, and handle dynamically added child elements.
+
+Q19. Why do we need to keep a function reference when using removeEventListener()?
+
+Because the function passed to removeEventListener() must match the function object that was originally registered.
+
+Q20. What happens if you use addEventListener("click", function(){}) multiple times?
+
+Each listener is registered separately, so each callback can execute when the event occurs.
+
+Tricky Interview Questions
+Q21. What will be the output?
+const parent = document.querySelector("#parent");
+const child = document.querySelector("#child");
+
+parent.addEventListener("click", () => {
+    console.log("Parent");
+});
+
+child.addEventListener("click", () => {
+    console.log("Child");
+});
+
+Click the child.
+
+Answer:
+Child
+Parent
+
+Because of bubbling.
+
+Q22. What will happen here?
+button.addEventListener("click", function () {
+    console.log("Hello");
+});
+
+button.addEventListener("click", function () {
+    console.log("World");
+});
+
+Answer:
+
+Hello
+World
+
+Both listeners execute.
+
+Q23. What happens here?
+button.onclick = function () {
+    console.log("One");
+};
+
+button.onclick = function () {
+    console.log("Two");
+};
+
+Answer:
+
+Two
+
+The second assignment replaces the first.
+
+Q24. What is the output?
+parent.addEventListener("click", () => {
+    console.log("Parent");
+});
+
+child.addEventListener("click", (event) => {
+    event.stopPropagation();
+    console.log("Child");
+});
+
+Click child.
+
+Answer:
+
+Child
+
+The event doesn't continue bubbling to the parent.
+
+Q25. What is wrong here?
+button.addEventListener("click", handleClick());
+
+function handleClick() {
+    console.log("Hello");
+}
+
+The function is being called immediately instead of being passed as the callback.
+
+Correct:
+
+button.addEventListener("click", handleClick);
+Coding Questions for Practice
+
+I recommend that you solve these without looking at the solution first.
+
+Level 1 — Beginner
+Q1. Button Click
+
+Create a button.
+
+When clicked:
+
+Button clicked!
+
+should appear in the console.
+
+Q2. Change Text
+
+Create:
+
+<h1>Hello</h1>
+<button>Change</button>
+
+When the button is clicked, change:
+
+Hello
+
+to:
+
+Welcome to JavaScript
+Q3. Counter
+
+Create:
+
++  0  -
+
+Requirements:
+
++ increases the number
+- decreases the number
+Display the current number
+Q4. Background Color
+
+Create a button:
+
+Change Color
+
+When clicked, change the background color of the page.
+
+Level 2 — Intermediate
+Q5. Character Counter
+
+Create a textarea.
+
+Display:
+
+Characters: 0
+
+While the user types:
+
+Characters: 1
+Characters: 2
+Characters: 3
+...
+
+Use the input event.
+
+Q6. Keyboard Detector
+
+Create a program that displays:
+
+You pressed: A
+
+when the user presses a keyboard key.
+
+Also display:
+
+Key: a
+Code: KeyA
+Q7. Form Validation
+
+Create:
+
+Name
+Email
+Password
+Submit
+
+When the form is submitted:
+
+Prevent page reload
+Check whether fields are empty
+Display appropriate error messages
+Display success message when valid
+Q8. Show/Hide Password
+
+Create:
+
+Password: [********] [Show]
+
+When clicking Show:
+
+Password: [mypassword] [Hide]
+
+Use an event listener.
+
+Level 3 — Interview Coding
+Q9. Todo List
+
+Create:
+
+[ Enter task ] [Add]
+
+☐ Learn JavaScript    Delete
+☐ Learn React        Delete
+
+Requirements:
+
+Add task
+Delete task
+Mark task completed
+Use event delegation
+Q10. Dynamic List
+
+Create a button:
+
+Add Item
+
+Every click should create:
+
+Item 1
+Item 2
+Item 3
+...
+
+Then use one parent event listener to handle clicks on dynamically created items.
+
+This tests whether you understand event delegation.
+
+Level 4 — Advanced Interview Coding
+Q11. Live Search
+
+Create a list:
+
+Apple
+Banana
+Mango
+Orange
+Pineapple
+Watermelon
+
+Create a search input.
+
+When the user types:
+
+app
+
+show matching items.
+
+Use the input event.
+
+Q12. Keyboard Shortcut
+
+Create a webpage where:
+
+Ctrl + S
+
+shows:
+
+Save shortcut detected
+
+without opening the browser's normal save dialog.
+
+Hint:
+
+event.ctrlKey
+event.key
+event.preventDefault()
+Q13. Modal
+
+Create:
+
+Open Modal
+
+When clicked:
+
+---------------------
+|      Welcome      |
+|                   |
+|      Close        |
+---------------------
+
+Requirements:
+
+Open modal
+Close modal
+Close when clicking outside
+Close with Escape
+
+This combines several event concepts.
+
+The Most Important Things to Remember
+
+For your interviews, make sure you can explain these without memorizing definitions:
+
+Event
+   ↓
+Event Listener
+   ↓
+Callback Function
+   ↓
+Event Object
+   ↓
+target / currentTarget
+   ↓
+preventDefault()
+   ↓
+stopPropagation()
+   ↓
+Event Capturing
+   ↓
+Event Bubbling
+   ↓
+Event Delegation
+   ↓
+addEventListener()
+   ↓
+removeEventListener()
+   ↓
+Custom Events
+⭐ Especially important for a JavaScript/React developer
+
+Focus strongly on:
+
+addEventListener()
+Event object
+target
+currentTarget
+preventDefault()
+stopPropagation()
+Bubbling
+Capturing
+Event delegation
+input, change, submit
+Keyboard events
+DOMContentLoaded
+removeEventListener()
+Event listener options
+Custom events
+
+Once these are clear, DOM events become much easier to understand in React, because React also has an event system built around user interactions.
+
+Sponsored options
+Ad
