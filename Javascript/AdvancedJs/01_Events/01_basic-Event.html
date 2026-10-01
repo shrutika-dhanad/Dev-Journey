@@ -28,7 +28,34 @@
 
     </div>
 
+<div id="myDiv">
 
+<button class="btn">click</button>
+
+
+</div>
+
+
+
+    <button class="subt">submit</button>
+
+
+<input type="text"id="inp">
+
+
+<div id="parent">
+<button id="child">Click me</button>
+
+</div>
+
+
+<ul id="list">
+
+<li>one </li>
+<li>Two</li>
+<li>Three</li>
+
+</ul>
 
 <script>
 
@@ -73,6 +100,90 @@ document.getElementById('Google').addEventListener('click', function(e){
     e.preventDefault();
     e.stopPropagation()
 
+})
+
+document.querySelector('#images').addEventListener('click', function(e){
+    if(e.target.tagName==='IMG'){
+        let removeItFromUl= e.target.parentNode;
+        removeItFromUl.remove();
+    }
+})
+
+const btn= document.querySelector('.btn');
+
+btn.addEventListener('click', function(e){
+    console.log(e.type);
+    console.log(e.target) 
+    console.log(e.target.textContent)
+   console.log(e.currentTarget)
+
+   const div= document.getElementById('myDiv')
+
+
+   div.addEventListener('click', function(e){
+    console.log(e.target)
+    console.log(e.currentTarget)
+   })
+
+})
+
+//   btn.addEventListener('mouseenter', function(){
+//     console.log("mouse enteres")
+//   })
+// btn.addEventListener('mousemove  ', function(){
+//     console.log("mouse moving")
+//   })
+
+
+
+
+let subt = document.querySelector('.subt')
+
+subt.addEventListener('click', function(e){
+    console.log("cliked on sub")
+    console.log(e.ClientX)
+    console.log(e.ClientY)
+
+})
+
+let inputs = document.getElementById('inp')
+
+inputs.addEventListener('keydown', function(e){
+    console.log(e.key)
+    console.log(e.code)
+})
+
+
+
+inputs.addEventListener("focus", function () {
+    console.log("Input focused");
+});
+
+inputs.addEventListener("blur", function () {
+    console.log("Input lost focus");
+});
+
+
+
+let parent =document.querySelector('#parent')
+let child =document.querySelector('#child')
+
+parent.addEventListener('click', () =>{
+    console.log("parent")
+})
+child.addEventListener('click', ()=>{
+    console.log("child")
+})
+
+
+
+//event Delegation : -
+
+
+const list = document.querySelector('#list')
+
+list.addEventListener('click', (e)=>{
+    console.log(e.target.textContent)
 })
 
     </script>
