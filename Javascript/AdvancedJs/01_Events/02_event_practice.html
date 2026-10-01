@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <div id="container">
+        <button class="delete">Delete</button>
+        <button class="edit">Edit</button>
+    </div>
+
+<button class="deletes">
+    <span>Delete</span>
+</button>
+
+
+<button id="mybutton">Shrutika's btn</button>
+
+
+
+
+
+
+
+</body>
+<script>
+
+
+const cont = document.querySelector('#container')
+
+cont.addEventListener('click', (e)=>{
+   if(e.target.matches(".delete")){
+    console.log("delete clicked")
+   }
+    if(e.target.matches(".edit")){
+    console.log("edit clicked")
+   }
+
+})
+
+const btn= document.querySelector('.deletes')
+btn.addEventListener('click', (e)=>{
+    console.log(event.target.closest(".deletes"))
+})
+
+
+//event listner executes once
+
+btn.addEventListener('click', ()=>{
+    console.log("btn was clicked ")
+},{
+    once: true
+})
+
+
+btn.addEventListener('DOMContentLoaded', function(){
+console.log("HTML loaded")
+})
+
+
+window.addEventListener('scroll', ()=>{
+    console.log(window.scrollY)
+})
+
+
+//custom event 
+ //nnot working 
+// const event = new CustomEvent("userlogin",{
+//     details:{
+//         username: "shrutika"
+//     }
+// })
+// document.addEventListener("userLogin", function(event){
+//     console.log(event.detail.username);
+// })
+// document.dispatchEvent(event)  
+
+
+let mybtn = document.getElementById('mybutton')
+
+mybtn.addEventListener('click', function(){
+    console.log(this)
+})
+
+mybtn.addEventListener('click', ()=>{
+    console.log(this)
+})
+</script>
+</html>
