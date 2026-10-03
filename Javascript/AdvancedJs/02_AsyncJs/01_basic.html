@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: grey">
+    <!-- 
+    
+    --js is a Synchronous  -> 1 by one execution hot
+    --single threded    -> all will excutes on a only 1 thread 
+    -- [Synvhronous and single thread is a js's defalut behaviour.]
+
+    --Execution Context 
+      - excecute one line of code at a time.
+      - each operatiom is waits for the last one to complete before executuing
+
+      CALL STACK=-
+
+      MEMORY HEAP
+
+    --Blocking code-------------------------Vs--------------------Non-Blocking code
+            |                                                       |
+      -block the flow of program..............................-Does not block execution
+      -Read file Sync           ..............................- read file Async
+
+
+     ---Js Engine 
+
+
+
+     
+---- setTimeout() - it is not part of core js it is come through a browser
+-----setInterval()
+-----clearInterval()- 
+-----clearTimeout()
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    -->
+
+
+<h1 >i learn javascript on Youtube !</h1> 
+<button id="Stop">Stop</button>
+</body>
+
+<script>
+
+// const chnageTeext =function(){
+//     document.querySelector('h1').innerHTML="hellos shruti";
+
+// }
+// setTimeout(chnageTeext, 2000)
+
+
+const changeText= function(){
+    document.querySelector('h1').innerHTML="hey shruti!!"
+}
+
+const change = setTimeout(changeText, 2000)
+document.querySelector('#Stop').addEventListener('click', ()=>{
+    clearTimeout(change)
+    console.log("Stopped...")
+})
+
+</script>
+</html>
