@@ -1,6 +1,6 @@
  InnerText:
 
- InnerHTML:
+ InnerHTML:  
 
  textContent:
 
@@ -25,3 +25,42 @@ QuerySelectorAll:
 
  Array.from(tempListItems)
  
+
+ * in html it can count the one linebreak and it is assumes as a nodelist.
+ when we add an any comment it can count as a node 
+ 
+ Nodess :  
+NodeList(9) [text, div.day, text, div.day, text, div.day, text, div.day, text]
+0
+: 
+text
+1
+: 
+div.day
+2
+: 
+text
+3
+: 
+div.day
+4
+: 
+text
+5
+: 
+div.day
+6
+: 
+text
+7
+: 
+div.day
+8
+: 
+text
+length
+: 
+9
+[[Prototype]]
+: 
+NodeList

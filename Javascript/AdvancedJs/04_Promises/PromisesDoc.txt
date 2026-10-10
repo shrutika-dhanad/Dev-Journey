@@ -1,0 +1,198 @@
+What is a Promise in JavaScript?
+
+A Promise is an object that represents the eventual completion or failure of an asynchronous operation.
+
+In simple words:
+
+Promise = “I will give you the result later.”
+
+For example, when you call an API, JavaScript doesn't want to wait until the server responds. It continues doing other work, and the Promise handles the result when it arrives.
+
+Real-life example
+
+Imagine you order food 🍕.
+
+You place the order → Promise created
+Restaurant is preparing → Pending
+Food arrives → Fulfilled
+Restaurant cannot prepare it → Rejected
+
+So a Promise has 3 states:
+
+State	Meaning
+pending	Operation is still running
+fulfilled	Operation completed successfully
+rejected	Operation failed
+Basic Promise syntax
+const myPromise = new Promise(function(resolve, reject) {
+
+    // asynchronous operation
+
+    if (success) {
+        resolve("Operation successful");
+    } else {
+        reject("Operation failed");
+    }
+
+});
+
+There are two important functions:
+
+resolve()
+
+Used when the operation is successful.
+
+resolve("Data received successfully");
+reject()
+
+Used when something goes wrong.
+
+reject("Something went wrong");
+How do we consume a Promise?
+
+We commonly use:
+
+.then() → success
+.catch() → error
+.finally() → runs in both cases
+myPromise
+    .then(function(result) {
+        console.log(result);
+    })
+    .catch(function(error) {
+        console.log(error);
+    })
+    .finally(function() {
+        console.log("Operation completed");
+    });
+Flow
+Promise
+   ↓
+Pending
+   ↓
+ ┌───────────────┐
+ ↓               ↓
+resolve()       reject()
+ ↓               ↓
+fulfilled       rejected
+ ↓               ↓
+.then()         .catch()
+Simple example
+const promise = new Promise(function(resolve, reject) {
+
+    let success = true;
+
+    if (success) {
+        resolve("Data received!");
+    } else {
+        reject("Failed to get data");
+    }
+
+});
+
+promise
+    .then(function(data) {
+        console.log(data);
+    })
+    .catch(function(error) {
+        console.log(error);
+    });
+
+Output:
+
+Data received!
+
+Because success is true, resolve() executes, so .then() runs.
+
+Why do we need Promises?
+
+Before Promises, asynchronous JavaScript was commonly handled with callbacks.
+
+This could become difficult to read:
+
+getData(function(data) {
+    processData(data, function(result) {
+        saveData(result, function(response) {
+            console.log(response);
+        });
+    });
+});
+
+This is called callback hell.
+
+Promises make the code cleaner:
+
+getData()
+    .then(processData)
+    .then(saveData)
+    .then(function(response) {
+        console.log(response);
+    })
+    .catch(function(error) {
+        console.log(error);
+    });
+Promise + API
+
+This is especially important for what you are currently learning.
+
+For example:
+
+fetch("https://example.com/users")
+
+fetch() returns a Promise.
+
+fetch("https://example.com/users")
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {
+        console.log(error);
+    });
+
+The flow is:
+
+fetch()
+   ↓
+HTTP Request
+   ↓
+Promise
+   ↓
+Server Response
+   ↓
+response.json()
+   ↓
+Promise
+   ↓
+JSON Data
+   ↓
+.then(data => ...)
+
+This is why Promises are extremely important before learning APIs deeply.
+
+Your JavaScript API learning flow should be:
+Asynchronous JavaScript
+        ↓
+Callbacks
+        ↓
+Promises ⭐
+        ↓
+.then()
+.catch()
+.finally()
+        ↓
+async / await ⭐
+        ↓
+fetch()
+        ↓
+HTTP Request & Response
+        ↓
+REST API
+        ↓
+JSON
+        ↓
+CRUD operations
+        ↓
+API projects
+
+If you're learning API + AJAX, I would strongly recommend learning Promises → async/await → Fetch API in this order.

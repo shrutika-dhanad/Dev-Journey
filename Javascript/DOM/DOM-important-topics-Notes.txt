@@ -1,0 +1,86 @@
+////Codesandbox
+
+
+
+Q1: What is the DOM in JavaScript?
+A: The DOM (Document Object Model) is a programming interface that represents
+ the structure of an HTML document as a tree. 
+ It allows JavaScript to interact with and modify web pages dynamically.
+By using the DOM, JavaScript can access and manipulate HTML elements, attributes, and styles.
+DOM manipulation enables updating the content, structure, or styling of a page without reloading the webpage.
+
+Q2: How do you select an element in the DOM?
+A: You can select elements using different methods:
+
+document.getElementById("myElement"); // Select by ID
+document.getElementsByClassName("myClass"); // Select by Class
+document.getElementsByTagName("p"); // Select by Tag Name
+document.querySelector(".myClass"); // Select First Matching Element
+document.querySelectorAll(".myClass"); // Select All Matching Elements
+
+Q3: How do you create and append an element to the DOM?
+A:
+
+let newElement = document.createElement("p"); // Create new paragraph element
+newElement.textContent = "Hello, JavaScript!";
+document.body.appendChild(newElement); // Append to body
+
+** Features of JavaScript DOM
+Tree Structure: Represents the HTML document as a hierarchical tree of nodes.
+Element Access: Provides methods to select elements such as getElementById, getElementsByTagName, and querySelector.
+Dynamic Manipulation: Allows changing content, attributes, and styles dynamically.
+Event Handling: Supports handling user interactions like clicks and keyboard events.
+
+
+Accessing Elements in the DOM
+getElementById()
+Retrieves an element by its id.
+
+let heading = document.getElementById("title");
+console.log(heading.textContent);
+getElementsByClassName()
+Returns a collection of elements with a specified class.
+
+let items = document.getElementsByClassName("list-item");
+console.log(items[0].textContent);
+getElementsByTagName()
+Selects elements by their tag name.
+
+let paragraphs = document.getElementsByTagName("p");
+console.log(paragraphs.length);
+
+querySelector()
+Returns the first element matching a CSS selector.
+
+let firstParagraph = document.querySelector("p");
+console.log(firstParagraph.textContent);
+
+querySelectorAll()
+Returns all elements matching a CSS selector.
+
+let allParagraphs = document.querySelectorAll("p");
+allParagraphs.forEach(p => console.log(p.textContent));
+
+Modifying the DOM
+Changing Content
+You can modify the content of an element using textContent or innerHTML.
+
+document.getElementById("title").textContent = "New Heading";
+document.getElementById("content").innerHTML = "<b>Updated Content</b>";
+
+Changing Attributes
+You can modify attributes like src, href, alt, etc.
+
+document.getElementById("myImage").src = "new-image.jpg";
+
+Adding and Removing Elements
+Create an element:
+
+let newPara = document.createElement("p");
+newPara.textContent = "This is a new paragraph.";
+document.body.appendChild(newPara);
+
+Remove an element
+
+let oldPara = document.getElementById("removeMe");
+oldPara.remove();
