@@ -1,0 +1,18 @@
+Prototype: Js's default behaviour is ProtoTypal Behaviour.
+it can give us  access of new and this keyword, 
+classes, this, ProtoTypal inheritan  ce are coming from prototype.
+
+--** the prototype of object is null
+
+
+function , array , string and all are objects in json
+
+function multBy5(n){
+return n*5;
+}
+multBy5.power=2;
+console.log(multBy5()) 25
+console.log(multBy5.power) = 2
+console.log(multBy5.prototype) = {}
+
+

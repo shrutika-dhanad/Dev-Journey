@@ -1,4 +1,15 @@
 object literals:
 
-constructor function:
+constructor function:this function give a new instance evry time.
+
+
+new :
+1. when we use a new keyword 1st the emoty object was created which is known as instance.
+2.constructor function is called because of new keyword.-> c f can packed all the arguments inside that gave us.
+3.in (this) keyword our arguments will inject inside that
+4.output 
+
+
+
+instanceOf: 
 
