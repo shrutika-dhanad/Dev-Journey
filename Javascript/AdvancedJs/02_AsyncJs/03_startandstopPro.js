@@ -17,8 +17,7 @@ if(!intervalId){
  
 function changeBgColor(){
     document.body.style.backgroundColor=randomColor();
-}
-
+} 
 };
 
 let stopChangingBgColor= function(){
@@ -29,4 +28,5 @@ let stopChangingBgColor= function(){
 
 
 document.querySelector('#start').addEventListener('click', startChangingBgColor)
+     
 document.querySelector('#stop').addEventListener('click', stopChangingBgColor)
