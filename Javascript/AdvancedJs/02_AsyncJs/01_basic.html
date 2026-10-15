@@ -7,8 +7,7 @@
 </head>
 <body style="background-color: grey">
     <!-- 
-    
-    --js is a Synchronous  -> 1 by one execution hot
+    -- js is a Synchronous  -> 1 by one execution hot
     --single threded    -> all will excutes on a only 1 thread 
     -- [Synvhronous and single thread is a js's defalut behaviour.]
 
@@ -70,6 +69,7 @@ const changeText= function(){
 }
 
 const change = setTimeout(changeText, 2000)
+
 document.querySelector('#Stop').addEventListener('click', ()=>{
     clearTimeout(change)
     console.log("Stopped...")
