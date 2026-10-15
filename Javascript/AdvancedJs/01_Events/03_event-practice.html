@@ -74,7 +74,6 @@ dec.addEventListener('click', function(){
 let msg = document.querySelector('#msg')
 let counter = document.querySelector('#valuecounts')
 
-
 msg.addEventListener('input', function(){
     counter.textContent= msg.value.length;
 
@@ -88,7 +87,7 @@ const username = document.querySelector('#username')
 form.addEventListener('submit', function(e){
     event.preventDefault();
 
-    if(username.valye.trim()===""){
+    if(username.value.trim()===""){
         console.log("usernmae is required")
         return 
     }
