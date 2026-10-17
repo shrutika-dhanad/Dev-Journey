@@ -93,7 +93,7 @@ Use JavaScript.info when: you are learning a topic for the first time and want a
 
 freeCodeCamp
 
-freeCodeCamp
+freeCodeCamp                                                                                                                                                                
 
 Use it for hands-on practice, exercises and projects rather than as your primary documentation.
 
