@@ -82,3 +82,10 @@ console.log(multTwo(20,5))
 
 const userInf=(name)=>({name:"harshu"})
 console.log(userInf())
+
+
+
+const add=(a,b)=>{
+  return a+b
+}
+console.log(add(10,50))
