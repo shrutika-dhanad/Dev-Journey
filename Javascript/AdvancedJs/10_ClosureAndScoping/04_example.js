@@ -8,4 +8,3 @@ function mainFunc() {
 
 let res = mainFunc();
 console.log(res);
-res();
