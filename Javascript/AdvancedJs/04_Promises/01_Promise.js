@@ -95,7 +95,7 @@ promiseSix
 async function getUserDetails() {
   try {
     let respose = await fetch("https://jsonplaceholder.typicode.com/comments");
-    let data = await respose.json();
+    let data = await respose.json(); // conversion also takes time 
     console.log(data);
   } catch (error) {
     console.log(error);
@@ -112,3 +112,15 @@ fetch('https://jsonplaceholder.typicode.com/comments')
 }).catch((error)=>{
     console.log("Error :" , error)
 })
+
+fetch('https://jsonplaceholder.typicode.com/comments')
+.then((res)=>{
+
+return res.json();
+
+}).then((finalData)=>{
+
+console.log(finalData);
+
+
+}).catch(())
