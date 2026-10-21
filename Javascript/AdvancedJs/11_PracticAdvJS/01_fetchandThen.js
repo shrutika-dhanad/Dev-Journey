@@ -25,4 +25,4 @@ fetch('https://api.github.com/users/shrutika-dhanad')
 })
 
 
-console.log("bye Shrutika ")
+console.log("Bye shrutiakaaa")
