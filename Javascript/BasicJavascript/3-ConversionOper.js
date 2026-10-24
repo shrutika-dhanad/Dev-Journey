@@ -27,7 +27,7 @@ console.log(isString);
 console.log(typeof isString);
 
 console.log(typeof isLoggedIn);
-
+ 
 console.log(+true); // 1
 console.log(+""); //0 because emprty string is a false|0
 

@@ -15,6 +15,8 @@ setTimeout(() => {
     console.log("good morning Shrutika")
 }, 0);
 
+
+
 fetch('https://api.github.com/users/shrutika-dhanad')
 .then(()=>{
     console.log("good evening")
@@ -23,6 +25,4 @@ fetch('https://api.github.com/users/shrutika-dhanad')
 }).catch((error)=>{
     console.log(error)
 })
-
-
 console.log("Bye shrutiakaaa")
