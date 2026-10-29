@@ -1,0 +1,21 @@
+.counter-cont{
+    background-color:beige;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    padding: 1.5rem;
+    border: 2px solid black;
+    border-radius: 14px;
+}
+
+#btn{
+    width:20%;
+    height:25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   background-color: aqua;
+   font-weight:bold;
+}
