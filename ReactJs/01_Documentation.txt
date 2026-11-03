@@ -1,0 +1,764 @@
+diffrence between:
+  create react app |  and |  vite 
+
+
+  1. give the name to the function componet in capital in both create react app or in Vite .
+  2. also give the file name in capital also if they are nit give the error.
+
+
+  vite - give the componet name as a jsx in it but in crate react-- js is allowed  
+  create react - jsx is also works in it or also js in work
+
+  
+
+  createRoot- 
+  it can create a DOM
+  it can compare the main dom and v dom -> and only update those things which is update 
+  in UI.
+  
+
+  ***********************************************************************************************************************
+
+React : - 
+
+  React has a component-based architecture.
+     This lets you break down your application into small, encapsulated parts 
+   which can then be composed to make more complex UIs.
+
+   React is easier to use as it requires minimal coding and because of its simplicity.
+
+React is declarative.
+ This means that you tell React what you want in the user-interface and React will build the actual User-Interface.
+
+
+src/: This directory contains the main source code of your React app.
+src/index.js: The entry point of your application.
+src/App.js: The main component of your application.
+src/index.css: The main CSS file for your application.
+public/: This directory contains the public assets of your app.
+
+Features in React Js:-
+
+React offers some outstanding features that make it the most widely adopted library for frontend app development.
+ Here is the list of those salient features.
+
+ What is JSX in React?
+JSX stands for JavaScript XML.
+
+JSX is a syntax extension for JavaScript that allows us to write HTML-like code inside JavaScript.
+
+In simple words, JSX helps us describe how our React user interface (UI) should look.
+1. Without JSX vs. With JSX
+Without JSX
+const heading = React.createElement(
+  "h1",
+  null,
+  "Hello World"
+);
+
+
+We use a JavaScript function to create an element.
+
+With JSX
+const heading = <h1>Hello World</h1>;
+
+
+The code looks similar to HTML and is easier to read.
+
+
+Both examples describe an h1 element, but JSX makes the code easier to understand.
+2. मराठीत समजून घेऊया 🇮🇳
+समजा, तुला React मध्ये webpage वर Hello World हे heading दाखवायचे आहे.
+
+JSX वापरून आपण असे लिहू शकतो:
+const heading = <h1>Hello World</h1>;
+
+
+इथे:
+- const heading — JavaScript variable आहे.
+- <h1> — HTML सारखा दिसणारा JSX element आहे.
+- Hello World — heading मध्ये दिसणारा मजकूर आहे.
+मराठीत: JSX मुळे आपण JavaScript code मध्ये HTML सारखी रचना लिहू शकतो. त्यामुळे webpage चा UI कसा दिसेल हे लिहिणे सोपे होते.
+
+लक्षात ठेव: JSX हे actual HTML नाही. ते HTML सारखे दिसणारे JavaScript syntax आहे. React app चालवताना build tools, जसे Vite, JSX चे JavaScript मध्ये रूपांतर करतात.
+3. How do we use JavaScript inside JSX?
+JavaScript expression लिहिण्यासाठी JSX मध्ये curly braces {} वापरतो.
+function App() {
+  const name = "Shrutika";
+
+  return (
+    <div>
+      <h1>Hello, {name}!</h1>
+    </div>
+  );
+}
+
+export default App;
+
+
+Output:
+Hello, Shrutika!
+This is how the heading appears in the UI.
+
+मराठीत:
+- name या variable मध्ये "Shrutika" आहे.
+- {name} मुळे JSX मध्ये त्या variable ची value दिसते.
+- म्हणून output Hello, Shrutika! येतो.
+4. Important JSX rules for interviews
+Rule	Example
+Return one parent element	Wrap elements in <div> or <>...</>
+Use className instead of class	<div className="container">
+Close every element	<img />, <input />
+Use {} for JavaScript expressions	<p>{10 + 20}</p> displays 30
+
+5. Interview question
+Question: What is JSX in React?
+
+Try answering in your own simple English. I'll correct your English and help you make it an interview-ready answer.
+
+
+jsx is a syntax extension for js that allowas us to write a html like code inside in jsx
+
+
+Good job! 😊 Your answer is correct in meaning. Let's improve your English and make it interview-ready.
+1. Corrected English answer
+JSX is a syntax extension for JavaScript that allows us to write HTML-like code inside JavaScript. It makes React code easier to read and write.
+
+
+
+
+2. मराठीत समजून घेऊया
+JSX म्हणजे JavaScript साठी एक syntax extension आहे.
+
+याच्या मदतीने आपण JavaScript code मध्ये HTML सारखा दिसणारा code लिहू शकतो. त्यामुळे React मध्ये UI तयार करणे सोपे होते.
+
+Example:
+const element = <h1>Hello World</h1>;
+
+
+इथे <h1>Hello World</h1> हा JSX आहे.
+3. Your English corrections
+Your sentence	Correct sentence
+allowas us	allows us
+a html like code	HTML-like code
+inside in jsx	inside JavaScript
+
+Important: JSX हा JavaScript मध्ये लिहिला जातो; JSX च्या आत JavaScript expressions लिहिण्यासाठी {} वापरतो.
+4. Next React interview question
+Why do we use JSX in React?
+
+Try answering in simple English in 1–2 sentences. I'll correct your answer and explain it in Marathi
+because browser cant understand the react directly
+
+
+Good try! 😊 Your answer is related to the concept, but let's make it more accurate for a React interview.
+1. Corrected interview answer
+We use JSX in React because it makes writing and understanding UI code easier. Browsers cannot directly understand JSX, so tools like Vite transform JSX into JavaScript that the browser can execute.
+
+
+
+
+2. मराठीत समजून घेऊया 🇮🇳
+तू म्हणालीस की browser ला React थेट समजत नाही. तुझा विचार योग्य दिशेने आहे, पण थोडा फरक समजून घे.
+- JSX: HTML सारखा दिसणारा code आपण लिहितो.
+- Vite आणि संबंधित tools: JSX चे JavaScript मध्ये रूपांतर करतात.
+- Browser: तयार झालेले JavaScript execute करतो आणि webpage दाखवतो.
+उदाहरण:
+const element = <h1>Hello!</h1>;
+
+
+Browser हा JSX code थेट समजू शकत नाही. त्यामुळे Vite सारखे build tools त्याचे JavaScript मध्ये रूपांतर करतात.
+
+लक्षात ठेव: React स्वतः browser ला समजत नाही असे म्हणण्यापेक्षा, browser JSX थेट समजू शकत नाही असे म्हणणे अधिक अचूक आहे.
+3. Next interview question
+What is the difference between JSX and HTML?
+
+Try answering in simple English in 1–2 sentences. I'll correct your English and explain it in Marathi.
+
+
+No problem 😊 We can learn it slowly. You don't need to know every answer immediately.
+
+Let's understand it in simple English and Marathi first.
+
+Difference between JSX and HTML
+- HTML: Used to structure a webpage.
+- JSX: Used in React to describe the UI using HTML-like syntax inside JavaScript.
+मराठीत:
+- HTML चा वापर webpage ची रचना तयार करण्यासाठी होतो.
+- JSX चा वापर React मध्ये UI तयार करण्यासाठी होतो. यात आपण JavaScript मध्ये HTML सारखा code लिहू शकतो.
+Example:
+<!-- HTML -->
+<div class="container">Hello</div>
+
+
+// JSX
+<div className="container">Hello</div>
+
+
+Notice: JSX uses className instead of class.
+
+
+
+VDOM and Real DOM
+:-
+When the state of an object changes in a React application, VDOM gets updated.
+ It then compares its previous state and then updates only those objects in the real DOM 
+ instead of updating all of the objects. This makes things move fast,
+
+
+ Important Questions:- 
+
+ What is React?
+React is a JavaScript library designed to build fast and dynamic user interfaces, especially for single-page applications (SPAs). It allows developers to create reusable components that update efficiently without needing to reload the entire page.
+
+Become a Medium member
+At the heart of React is its ability to inject JavaScript into HTML and update content dynamically. This is possible because of React’s ability to manipulate the DOM (Document Object Model), which is the structured representation of your webpage.
+
+“Think of React as a smart assistant that only changes the parts of your webpage that need updating, instead of reloading everything from scratch”.
+
+Understanding React Project Structure
+When you create a new React project, the folder structure might look complex, but it follows a simple logic. Whether you use Create React App or Vite, the core concepts remain the same.
+
+Key Folders and Files in a React Project
+Public Folder
+Contains index.html – the main HTML file where everything is injected.
+This file does not change dynamically; instead, React renders content inside it.
+2. Src (Source) Folder
+
+Contains all the JavaScript (JSX) files where React components are written.
+The main entry point is index.js or main.jsx, which connects the React app to the browser.
+How JavaScript (React) Connects to index.html
+The index.js or main.jsx file is responsible for rendering the React app inside index.html.
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root. Render(<App />);
+Breaking it Down:
+ReactDOM.createRoot() selects the <div id="root"></div> in index.html.
+root. render() tells React to render the App component inside the root div.
+The <App /> component contains all the elements and logic of your application.
+React’s Virtual DOM: The Secret to Fast Updates
+One of the biggest advantages of React is its Virtual DOM.
+
+What is the Virtual DOM?
+It is a lightweight copy of the real DOM.
+Instead of making changes directly to the real DOM (which is slow), React updates the virtual DOM first.
+React then calculates only the necessary changes and updates them efficiently in the real DOM.
+“Imagine writing on a rough draft before making final edits on the actual document. This makes React extremely fast!”
+
+JSX: Writing HTML Inside JavaScript
+In React, we don’t write traditional HTML. Instead, we use JSX (JavaScript XML), which allows us to write HTML-like syntax inside JavaScript.
+
+Example of JSX Component (firstPage.jsx):
+function firstPage() {
+    return (
+        <h2>firstPage in React Project</h2>
+    );
+}
+export default firstPage;
+Importing a Component:
+To use the firstPage component inside another file, you need to import it:
+
+import firstPage from './firstPage';
+This makes React modular, meaning each part of your website can be a separate component that can be reused anywhere.
+
+Best Practices for Writing React Code
+Component Names Should Be Capitalized:
+✅ function firstPage() {}
+❌ function firstPage() {}
+2. File Names for Components Should End in .jsx:
+
+✅ firstPage.jsx
+❌ firstPage.js (React may still work, but .jsx makes it clearer)
+3. Wrap Multiple Elements in a Parent Tag:
+
+function MyComponent() {
+    return (
+        <div>
+            <h1>Welcome</h1>
+            <p>This is a React app.</p>
+        </div>
+    );
+}
+If you don’t wrap multiple elements, React will throw an error.
+
+Final Thoughts
+React is a powerful library, but understanding how it works behind the scenes is crucial for mastering it. The key takeaways from this guide are:
+
+✅ React is a JavaScript library that updates the DOM efficiently.
+✅ The index.html file is the main entry point where React injects content.
+✅ The Virtual DOM allows React to update only the necessary parts of the webpage.
+✅ JSX allows writing HTML-like code inside JavaScript.
+✅ Following best practices will make your React code cleaner and error-free.
+
+
+
+
+
+******************************************* <- React Hooks -> ***************************************************************
+
+
+React can Provide us a lot of functionality.the way of using this functionlity is callled Hooks.
+by using diffrent hook we can experienced this functionality 
+
+1. What are React Hooks?
+Definition for an interview:
+
+React Hooks are special functions in React that allow functional components to use React features such as state, lifecycle-related behavior, context, and refs.
+
+Before Hooks were introduced in React 16.8, state and lifecycle methods were primarily available through class components. Hooks made these features available in function components too.
+
+Example of a React Hook:
+import { useState } from "react";
+
+function App() {
+  const [count, setCount] = useState(0);
+
+  return <h1>{count}</h1>;
+}
+
+export default App;
+
+
+Here, useState() is a React Hook that lets us store and update the count value.
+
+मराठीत समजून घेऊया:
+
+React Hooks म्हणजे React मधील special functions आहेत. त्यांच्या मदतीने आपण functional components मध्ये state manage करू शकतो आणि React ची इतर features वापरू शकतो.
+
+उदाहरणार्थ, button वर click केल्यावर counter ची value बदलायची असेल, तर आपण useState() Hook वापरतो.
+2. Why were Hooks introduced?
+Hooks were introduced in React 16.8, released in February 2019.
+
+The main reasons were:
+- State in function components: Previously, class components were generally needed for local component state. Hooks made state available in function components.
+- Simpler code: We can use functions instead of writing class components with this, constructors, and binding.
+- Reusable logic: Custom Hooks let us share stateful logic between components.
+- Organized logic: Related behavior can be grouped together in a function component, rather than split across different lifecycle methods.
+Before Hooks vs. After Hooks
+Before Hooks — Class Component
+class Counter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { count: 0 };
+  }
+
+  render() {
+    return <h1>{this.state.count}</h1>;
+  }
+}
+
+
+
+
+After Hooks — Function Component
+import { useState } from "react";
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return <h1>{count}</h1>;
+}
+
+
+
+
+The second example is more concise and doesn't require a class or this.state.
+
+Important interview point: Hooks did not replace class components. Class components still exist and are supported. Hooks provide a simpler way to use many React features in function components.
+3. What are the uses of React Hooks?
+Different Hooks solve different problems.
+Hook	Use
+useState()	Store and update component state
+useEffect()	Synchronize with external systems, such as fetching data or managing subscriptions
+useContext()	Access values shared through React Context
+useRef()	Store a reference without causing a re-render when it changes
+useReducer()	Manage more complex state update logic
+useMemo()	Cache a calculated value between renders
+useCallback()	Cache a function definition between renders
+
+You can also create custom Hooks to reuse logic between components.
+
+For now, let's focus on your first Hook: useState().
+
+4. useState() Hook in detail
+What is useState()?
+Interview definition:
+
+useState() is a React Hook that allows a function component to add and manage state. It returns the current state value and a setter function that updates the state and triggers a re-render when the state changes.
+
+In simple English, it remembers a value in a component and lets us update that value.
+
+मराठीत: useState() चा वापर component मधील value store आणि update करण्यासाठी केला जातो. Value update झाल्यावर React आवश्यकतेनुसार component पुन्हा render करतो आणि नवीन value screen वर दाखवतो.
+Syntax
+const [state, setState] = useState(initialValue);
+
+
+Let's understand each part:
+1. state
+The current value stored in the state.
+
+मराठी: सध्या store असलेली value.
+
+
+2. setState
+The function used to update the state.
+
+मराठी: state ची value बदलण्यासाठी वापरले जाणारे function.
+
+
+3. useState
+The React Hook that provides the state value and setter function.
+
+4. initialValue
+The initial value used when the component's state is initialized.
+
+मराठी: सुरुवातीला state मध्ये असणारी value.
+
+
+For example:
+const [count, setCount] = useState(0);
+
+
+- count = 0 initially
+- setCount = function used to update count
+- useState(0) = initializes the state with 0
+We use array destructuring to get the two returned values.
+5. Practical example: Counter Project
+Let's build on your React counter project.
+Interactive useState demo
+Counter
+0
+ Add value
+ Remove value
+
+Reset counterTry clicking the buttons. The displayed value updates when the state changes.
+
+Here is the React code for the same basic idea:
+import { useState } from "react";
+
+function App() {
+  const [count, setCount] = useState(0);
+
+  const addValue = () => {
+    setCount(count + 1);
+  };
+
+  const removeValue = () => {
+    setCount(count - 1);
+  };
+
+  return (
+    <>
+      <h1>Counter: {count}</h1>
+      <button onClick={addValue}>Add Value</button>
+      <button onClick={removeValue}>Remove Value</button>
+    </>
+  );
+}
+
+export default App;
+
+
+How does this code work?
+1. useState(0) initializes the counter to zero.
+2. When you click Add Value, setCount(count + 1) requests a state update.
+3. React renders the component again using the updated state.
+4. The new counter value appears on the screen.
+मराठीत: Button click केल्यावर setCount() नवीन value set करण्याची विनंती करतो. React component पुन्हा render करतो आणि नवीन value दाखवतो.
+
+Remember: we use the setter function rather than assigning a new value directly to the state variable.
+count = count + 1; // Incorrect way to update React state
+setCount(count + 1); // Correct way
+
+
+
+6. What happens internally when useState() updates?
+This is an important interview topic.
+Initial render
+
+count = 0
+
+User clicks the button
+
+setCount(count + 1)
+
+React schedules a state update
+
+New count = 1
+
+Re-render
+
+UI displays count = 1
+
+
+One important detail: calling the setter does not immediately change the state variable in the currently running code. React schedules the update, and the next render receives the updated state. React may batch multiple updates together.
+7. Why do we use the setter function?
+Consider this code:
+const [count, setCount] = useState(0);
+
+function addValue() {
+  setCount(count + 1);
+}
+
+
+When setCount is called, React can update its stored state and render the component again.
+
+But if you do this:
+count = count + 1;
+
+
+you are just attempting to assign a value to the local variable. It doesn't correctly update React's state or tell React to render the component again.
+
+Interview answer: We use the state setter because it informs React about a state update and allows React to render the UI with the new state.
+8. Functional updates in useState()
+Suppose you want to increase a counter three times in one event.
+setCount(count + 1);
+setCount(count + 1);
+setCount(count + 1);
+
+
+These calls may all use the same count value from the current render, so the counter might increase only once.
+
+The safer approach when each update depends on the previous value is:
+setCount(prevCount => prevCount + 1);
+setCount(prevCount => prevCount + 1);
+setCount(prevCount => prevCount + 1);
+
+
+Now React processes each update using the previous queued value, so the counter increases by three.
+
+मराठीत: जेव्हा नवीन value ही आधीच्या value वर अवलंबून असते, तेव्हा prevCount => prevCount + 1 हा functional updater वापरणे योग्य आहे.
+9. Can useState() store different data types?
+Yes! It can store numbers, strings, booleans, arrays, objects, and more.
+const [age, setAge] = useState(22);
+
+const [name, setName] = useState("Shrutika");
+
+const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+const [skills, setSkills] = useState(["HTML", "CSS", "JavaScript"]);
+
+const [user, setUser] = useState({
+  name: "Shrutika",
+  role: "Developer"
+});
+
+
+When updating an object or array, create a new object or array rather than mutating the existing state directly.
+
+For example, updating an object:
+setUser(prevUser => ({
+  ...prevUser,
+  role: "React Developer"
+}));
+
+
+Here, ...prevUser copies the existing properties, and role gets the new value.
+10. Rules of Hooks
+React has two important Rules of Hooks:
+1. Call Hooks at the top level. Don't call them inside loops, conditions, or nested functions.
+2. Call Hooks only from React function components or custom Hooks. Don't call them from ordinary JavaScript functions.
+Correct:
+function App() {
+  const [count, setCount] = useState(0);
+
+  if (count > 5) {
+    console.log("Count is greater than 5");
+  }
+
+  return <h1>{count}</h1>;
+}
+
+
+Incorrect:
+function App() {
+  if (true) {
+    const [count, setCount] = useState(0);
+  }
+
+  return <h1>Hello</h1>;
+}
+
+
+In the incorrect example, the Hook is called inside a condition.
+11. Important useState() interview questions
+Q1. What is state in React?
+
+State is data managed by a component that can change over time. Updating state can cause React to re-render the component.
+
+Q2. What does useState() return?
+
+It returns an array containing the current state value and a setter function.
+
+Q3. Does changing state cause a re-render?
+
+Usually, yes. React renders the component again when its state changes, although it can skip rendering work when the new state is identical to the previous state.
+
+Q4. Can we use multiple useState() Hooks in one component?
+
+Yes. For example, you can separately manage a user's name, age, and login status.
+
+Q5. What is the difference between props and state?
+
+Props are passed into a component by its parent. State is managed within the component using React state mechanisms.
+
+Q6. Can we use Hooks inside class components?
+
+No. Hooks are designed for function components and custom Hooks. Class components use their class-based state and lifecycle APIs instead.
+
+
+12. Practice one interview question
+React interview practice · Question 1
+
+What will be the output after clicking the button once?
+function App() {
+  const [count, setCount] = useState(5);
+
+  return (
+    <button onClick={() => setCount(count + 1)}>
+      {count}
+    </button>
+  );
+}
+
+
+
+A. 5
+
+B. 6
+
+C. 0
+
+D. Error
+
+Check answer
+Your takeaway: useState() is the foundation for interactive React applications, such as counters, forms, login screens, shopping carts, and many React Native mobile app features. Once you understand how state updates and re-renders work, learning other Hooks becomes much easier.
+
+
+Class Components vs Function Components in React
+Let's understand this topic in simple English and Marathi, with code examples and interview answers.
+1. What is a Class Component?
+Interview definition: A class component is a React component defined using an ES6 JavaScript class that extends React.Component. It uses a render() method to return the UI and can manage state using this.state and this.setState().
+
+मराठीत: Class Component म्हणजे JavaScript class वापरून तयार केलेला React component. त्यामध्ये UI दाखवण्यासाठी render() method वापरली जाते.
+
+Example:
+import React from "react";
+
+class Counter extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      count: 0
+    };
+  }
+
+  render() {
+    return (
+      <div>
+        <h2>Count: {this.state.count}</h2>
+
+        <button
+          onClick={() =>
+            this.setState({
+              count: this.state.count + 1
+            })
+          }
+        >
+          Increase
+        </button>
+      </div>
+    );
+  }
+}
+
+export default Counter;
+
+
+How does it work?
+- class Counter extends React.Component defines a class component.
+- constructor() initializes the state.
+- this.state stores the counter value.
+- this.setState() updates the state.
+- render() returns the UI.
+Notice that we use this.state.count instead of just count.
+2. What is a Function Component?
+Interview definition: A function component is a JavaScript function that returns React elements describing the UI. It can use Hooks such as useState() and useEffect() to manage state and other React features.
+
+मराठीत: Function Component म्हणजे JavaScript function जो UI return करतो. त्यामध्ये state manage करण्यासाठी आपण useState() सारखे Hooks वापरू शकतो.
+
+Example:
+import { useState } from "react";
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <h2>Count: {count}</h2>
+
+      <button onClick={() => setCount(count + 1)}>
+        Increase
+      </button>
+    </div>
+  );
+}
+
+export default Counter;
+
+
+Here, useState(0) initializes the counter to zero, and setCount() updates it.
+3. Class Component vs Function Component
+Feature	Class Component	Function Component
+Definition	JavaScript class	JavaScript function
+UI	render() method	Returns JSX directly
+State	this.state	Hooks such as useState()
+State update	this.setState()	Setter such as setCount()
+Lifecycle behavior	Lifecycle methods	Usually useEffect() for synchronization
+this keyword	Used for accessing class members	Not needed for component state
+Hooks	Cannot use Hooks	Can use Hooks
+Modern React	Supported, but less commonly used for new components	Recommended for new components
+
+4. Why can't Hooks be used in Class Components?
+This is an important interview question.
+
+Interview answer:
+
+Hooks were designed specifically for function components and custom Hooks. Class components already have their own mechanisms for managing state and lifecycle behavior, such as this.state, this.setState(), and lifecycle methods. Therefore, React Hooks cannot be called inside class components.
+
+For example, this is incorrect:
+class Counter extends React.Component {
+  const [count, setCount] = useState(0); // ❌ Incorrect
+
+  render() {
+    return <h1>{count}</h1>;
+  }
+}
+
+
+Why is it incorrect?
+1. A class body cannot contain a local variable declaration like this directly.
+2. React Hooks must not be called inside class components.
+3. Class components use this.state and this.setState() instead.
+मराठीत: Hooks हे Function Components साठी तयार केले आहेत. Class Components मध्ये state manage करण्यासाठी this.state आणि this.setState() यांसारख्या सुविधा आधीपासून आहेत. त्यामुळे Class Component मध्ये useState() किंवा useEffect() वापरता येत नाही.
+
+One important detail: Hooks were introduced in React 16.8 to make state and other React features available in function components. They did not remove or disable class components.
+5. Why are Function Components preferred today?
+Less boilerplate
+
+You generally need less code than a class component, without constructors or this.
+
+
+Reusable logic
+
+Custom Hooks allow you to reuse stateful logic between components.
+
+
+Easy to organize
+
+Related logic can be grouped together using Hooks such as useState() and useEffect().
